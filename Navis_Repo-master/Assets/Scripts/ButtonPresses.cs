@@ -83,5 +83,23 @@ public class ButtonPresses : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public bool LeAr()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool RiAr()
+    {
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            return true;
+        }
+        return false;
     } 
 }

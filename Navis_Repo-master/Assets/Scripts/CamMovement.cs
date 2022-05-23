@@ -62,9 +62,14 @@ public class CamMovement : MonoBehaviour
             transform.rotation = Quaternion.Euler(90f, 0f, 0f); 
         }
 
-        if(bp.ShiftQ())
+        if(bp.LeAr())
         {
             transform.Rotate(0f, 0f, 90f);
+        }
+
+        if(bp.RiAr())
+        {
+            transform.Rotate(0f, 0f, -90f);
         }
 
         cam.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * scrollVelo * Time.deltaTime;
