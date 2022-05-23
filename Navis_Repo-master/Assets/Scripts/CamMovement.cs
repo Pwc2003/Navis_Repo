@@ -8,8 +8,8 @@ public class CamMovement : MonoBehaviour
     private float moveVelo = 10f;
     private float scrollVelo = 1000f;
 
-    private float x = 0f;
-    private float y = 0f;
+    //private float x = 0f;
+    //private float y = 0f;
 
     private Camera cam;
     private ButtonPresses bp;
@@ -24,9 +24,6 @@ public class CamMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //x = -Input.GetAxis("Mouse X") * velo * Time.deltaTime;
-        //y = -Input.GetAxis("Mouse Y") * velo * Time.deltaTime;
-
         if(bp.W())
         {
             transform.position += transform.up * moveVelo * Time.deltaTime;
