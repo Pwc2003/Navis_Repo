@@ -1,18 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Runtime.Serialization.Fromatters.Binary;
 
 public class SerializationManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static bool Save(string saveName, object saveData)
     {
-        
+        BinaryFormatter formatter = GetBinaryFormatter();
+
+        if(!Directory.Exists(Application.persistenDataPath + "/saves"))
+        {
+            Directory.CreateDirectory(Application.persistenDataPath + "/saves");
+        }
+
+        string path = Application.persistenDataPath + "/saves/" + saveName + ".save";
+
+        FileStream file = File.Create(path);
+
+        formatter.Serialize(file, saveData);
+
+        file.Close();
+
+        return true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static object Load(string path)
     {
-        
+        if(!File.Exists(path))
+        {
+            return null;
+        }
+
+        BinaryFormatter formatter = GetBinaryFormatter();
+
+        FileStream file = File.Open(path, FileMode.Open);
+
+        try
+        {
+            object save = formatter.Deserialize(file);
+            file.Close();
+            return save:
+        }
+        catch
+        {
+            Debug.LogErrorFormat("Failed to load file at {0}", path);
+            file.Close();
+            return null;
+        }
+    }
+
+    public static BinaryFormatter GetBinaryFormatter()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        return formatter;
     }
 }
