@@ -12,13 +12,13 @@ public class CamMovement : MonoBehaviour
     private float y = 0f;
 
     private Camera cam;
-    private ButtonPresses buttonPresses;
+    private ButtonPresses bp;
 
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
-        buttonPresses = GetComponent<ButtonPresses>();
+        bp = GetComponent<ButtonPresses>();
     }
 
     // Update is called once per frame
@@ -27,39 +27,44 @@ public class CamMovement : MonoBehaviour
         //x = -Input.GetAxis("Mouse X") * velo * Time.deltaTime;
         //y = -Input.GetAxis("Mouse Y") * velo * Time.deltaTime;
 
-        if(buttonPresses.Up())
+        if(bp.W())
         {
             transform.position += transform.up * moveVelo * Time.deltaTime;
         }
 
-        if(buttonPresses.Down())
+        if(bp.S())
         {
             transform.position -= transform.up * moveVelo * Time.deltaTime;
         }
 
-        if(buttonPresses.Left())
+        if(bp.A())
         {
             transform.position -= transform.right * moveVelo * Time.deltaTime;
         }
 
-        if(buttonPresses.Right())
+        if(bp.D())
         {
             transform.position += transform.right * moveVelo * Time.deltaTime;
         }
 
-        if(buttonPresses.RotLeft())
+        if(bp.Q())
         {
             transform.Rotate(0f, 0f, rotVelo * Time.deltaTime);
         }
 
-        if(buttonPresses.RotRight())
+        if(bp.E())
         {
             transform.Rotate(0f, 0f, -rotVelo * Time.deltaTime);
         }
 
-        if(buttonPresses.Reset())
+        if(bp.Reset())
         {
             transform.rotation = Quaternion.Euler(90f, 0f, 0f); 
+        }
+
+        if(bp.ShiftQ())
+        {
+            transform.Rotate(0f, 0f, 90f);
         }
 
         cam.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * scrollVelo * Time.deltaTime;

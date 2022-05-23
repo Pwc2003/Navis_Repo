@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonPresses : MonoBehaviour
 {
-    public bool Up()
+    public bool W()
     {
         if (Input.GetKey(KeyCode.W))
         {
@@ -13,7 +13,7 @@ public class ButtonPresses : MonoBehaviour
         return false;
     }
 
-    public bool Down()
+    public bool S()
     {
         if (Input.GetKey(KeyCode.S))
         {
@@ -22,7 +22,7 @@ public class ButtonPresses : MonoBehaviour
         return false;
     }
 
-    public bool Left()
+    public bool A()
     {
         if (Input.GetKey(KeyCode.A))
         {
@@ -31,7 +31,7 @@ public class ButtonPresses : MonoBehaviour
         return false;
     }
 
-    public bool Right()
+    public bool D()
     {
         if (Input.GetKey(KeyCode.D))
         {
@@ -40,7 +40,7 @@ public class ButtonPresses : MonoBehaviour
         return false;
     }
 
-    public bool RotRight()
+    public bool E()
     {
         if (Input.GetKey(KeyCode.E))
         {
@@ -49,7 +49,7 @@ public class ButtonPresses : MonoBehaviour
         return false;
     }
 
-    public bool RotLeft()
+    public bool Q()
     {
         if (Input.GetKey(KeyCode.Q))
         {
@@ -66,4 +66,22 @@ public class ButtonPresses : MonoBehaviour
         }
         return false;
     }
+
+    public bool Shift()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool ShiftQ()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Q))
+        {
+            return true;
+        }
+        return false;
+    } 
 }
