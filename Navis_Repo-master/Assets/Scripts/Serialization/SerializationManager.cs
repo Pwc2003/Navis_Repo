@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System.Runtime.Serialization.Fromatters.Binary;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class SerializationManager : MonoBehaviour
 {
@@ -10,12 +10,12 @@ public class SerializationManager : MonoBehaviour
     {
         BinaryFormatter formatter = GetBinaryFormatter();
 
-        if(!Directory.Exists(Application.persistenDataPath + "/saves"))
+        if(!Directory.Exists(Application.persistentDataPath + "/saves"))
         {
-            Directory.CreateDirectory(Application.persistenDataPath + "/saves");
+            Directory.CreateDirectory(Application.persistentDataPath + "/saves");
         }
 
-        string path = Application.persistenDataPath + "/saves/" + saveName + ".save";
+        string path = Application.persistentDataPath + "/saves/" + saveName + ".save";
 
         FileStream file = File.Create(path);
 
@@ -41,7 +41,7 @@ public class SerializationManager : MonoBehaviour
         {
             object save = formatter.Deserialize(file);
             file.Close();
-            return save:
+            return save;
         }
         catch
         {

@@ -10,9 +10,9 @@ public class SaveData : MonoBehaviour
    {
        get 
        {
-           if (_cutten == null)
+           if (_current == null)
            {
-               _current == new SaveData()
+               _current = new SaveData();
            }
            return _current;
        }
