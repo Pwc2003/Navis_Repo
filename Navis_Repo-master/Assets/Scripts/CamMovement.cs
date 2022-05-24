@@ -1,18 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Timers;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CamMovement : MonoBehaviour
 {
     private float rotVelo = 30f;
+    private float rotZ = 1f;
+    private float amountRot = 0f;
     private float moveVelo = 10f;
     private float scrollVelo = 1000f;
+
+    private bool left;
+    private bool right;
+    private bool rotPlease;
 
     //private float x = 0f;
     //private float y = 0f;
 
     private Camera cam;
     private ButtonPresses bp;
+
+    private Coroutine r;
+
+    private Timer timer;
+    private Time time;
 
     // Start is called before the first frame update
     void Start()
@@ -61,14 +74,56 @@ public class CamMovement : MonoBehaviour
 
         if(bp.LeAr())
         {
-            transform.Rotate(0f, 0f, 90f);
+            left = true;
+            StartCoroutine(stopPleasefortheLoveofGod());
+            left = false;
         }
 
         if(bp.RiAr())
         {
-            transform.Rotate(0f, 0f, -90f);
+            right = true;
+            StartCoroutine(stopPleasefortheLoveofGod());
+            right = false;
         }
 
         cam.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * scrollVelo * Time.deltaTime;
+    }
+
+    IEnumerator RotLeft()
+    {
+        rotPlease = true;
+        while(rotPlease)
+        {
+            transform.Rotate(0f, 0f, 90f * Time.deltaTime);
+            yield return null;
+        }
+        Debug.Log("Done");
+    }
+
+    IEnumerator RotRight()
+    {
+        rotPlease = true;
+        while(rotPlease)
+        {
+            transform.Rotate(0f, 0f, -90f * Time.deltaTime);
+            yield return null;
+        }
+        Debug.Log("Done");
+    }
+
+    IEnumerator stopPleasefortheLoveofGod()
+    {
+        if(left)
+        {
+            r = StartCoroutine(RotLeft());
+        }
+        else if(right)
+        {
+            r = StartCoroutine(RotRight());
+        }
+        Debug.Log("started");
+        yield return new WaitForSeconds(1f);
+        StopCoroutine(r);
+        Debug.Log("stopped");
     }
 }
