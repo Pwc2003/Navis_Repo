@@ -29,4 +29,11 @@ public class ToMainMenu : MonoBehaviour
        PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
        SceneManager.LoadScene(2);
    }
+
+   public void LoadCredits()
+   {
+      currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+       PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+       SceneManager.LoadScene(3);
+   }
 }
