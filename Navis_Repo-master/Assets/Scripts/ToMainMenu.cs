@@ -22,4 +22,11 @@ public class ToMainMenu : MonoBehaviour
            Application.Quit();
         #endif
    }
+
+   public void LoadOptions()
+   {
+       currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+       PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+       SceneManager.LoadScene(2);
+   }
 }
