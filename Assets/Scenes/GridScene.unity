@@ -975,15 +975,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1509130833}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac9b3de76f2531d43b3e465e2c30c0ca, type: 3}
+  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridLayout: {fileID: 1509130834}
-  grid: {fileID: 0}
-  MainTilemap: {fileID: 0}
-  whiteTile: {fileID: 0}
-  prefab1: {fileID: 0}
-  objectToPlace: {fileID: 0}
 --- !u!1 &1931125972
 GameObject:
   m_ObjectHideFlags: 0
