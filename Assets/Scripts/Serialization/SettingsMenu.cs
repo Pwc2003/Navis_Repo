@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class SettingsMenu : MonoBehaviour
     public Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
+
+    private int currentSceneIndex;
 
 
     void Start()
@@ -67,5 +70,15 @@ public class SettingsMenu : MonoBehaviour
     public void SetFullscreen(bool isFullscreen)
     {
         Screen.fullScreen = isFullscreen;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+            SceneManager.LoadScene(0);
+        }
     }
 }
