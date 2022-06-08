@@ -25,7 +25,7 @@ public class HUDMain : MonoBehaviour
     void Start()
     {
         // Find Stuff
-        HUDL_U = GameObject.Find("Uitklapding");
+        HUDL_U = GameObject.Find("UitklapdingL");
         Tab1 = GameObject.Find("TabHUDL1");
         Tab2 = GameObject.Find("TabHUDL2");
 
