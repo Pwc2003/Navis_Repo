@@ -36,4 +36,11 @@ public class ToMainMenu : MonoBehaviour
        PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
        SceneManager.LoadScene(3);
    }
+
+   public void StartPleaseForTheLoveofGod()
+   {
+         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+         PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+         SceneManager.LoadScene(4);
+   }
 }
