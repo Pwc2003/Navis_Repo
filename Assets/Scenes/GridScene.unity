@@ -2757,9 +2757,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonHUD1: {fileID: 1576004330}
   ButtonHUD2: {fileID: 2023244236}
+  ApplyCitynameBtn: {fileID: 1944586966}
   EditNameBtn: {fileID: 979301448}
   Cityname: {fileID: 361345466}
   PlaceholderCityname: {fileID: 416068064}
+  Cityname_Edit: {fileID: 830529723}
 --- !u!1 &1576004328
 GameObject:
   m_ObjectHideFlags: 0

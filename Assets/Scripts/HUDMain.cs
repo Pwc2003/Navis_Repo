@@ -13,6 +13,8 @@ public class HUDMain : MonoBehaviour
     public Button ButtonHUD1;
     public Button ButtonHUD2;
 
+    public Button ApplyCitynameBtn;
+
     public Button EditNameBtn;
 
     // Tabs
@@ -21,6 +23,8 @@ public class HUDMain : MonoBehaviour
 
     public Text Cityname;
     public Text PlaceholderCityname;
+
+    public Text Cityname_Edit;
 
 
     void Start()
@@ -38,6 +42,7 @@ public class HUDMain : MonoBehaviour
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
 
         EditNameBtn.onClick.AddListener(EditNameBtn_Click);
+        ApplyCitynameBtn.onClick.AddListener(ApplyCitynameBtn_Click);
 
         // Do some other magic or sum lmfao
         Tab1.SetActive(false);
@@ -74,5 +79,10 @@ public class HUDMain : MonoBehaviour
 
     void Update() {
         PlaceholderCityname.text = Cityname.text;
+    }
+
+    void ApplyCitynameBtn_Click() {
+        Cityname_Edit.text = Cityname.text;
+        Debug.Log("Cityname: " + Cityname.text + " and Cityname_Edit: " + Cityname_Edit.text);
     }
 }
