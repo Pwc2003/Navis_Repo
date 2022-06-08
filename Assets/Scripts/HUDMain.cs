@@ -20,6 +20,7 @@ public class HUDMain : MonoBehaviour
     private GameObject Tab2;
 
     public Text Cityname;
+    public Text PlaceholderCityname;
 
 
     void Start()
@@ -69,5 +70,9 @@ public class HUDMain : MonoBehaviour
         } else {
             Cityname.text = "Navis City";
         }
+    }
+
+    void Update() {
+        PlaceholderCityname.text = Cityname.text;
     }
 }
