@@ -77,6 +77,13 @@ public class HUDMain : MonoBehaviour
 
     void Update() {
         PlaceholderCityname.text = Cityname.text;
+
+        if(Cityname_Edit.text == "")
+        {
+            ApplyCitynameBtn.interactable = false;
+        } else {
+            ApplyCitynameBtn.interactable = true;
+        }
     }
 
     void ApplyCitynameBtn_Click() {
