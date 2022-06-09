@@ -13,15 +13,24 @@ public class HUDMain : MonoBehaviour
     public Button ButtonHUD1;
     public Button ButtonHUD2;
 
+    public Button ApplyCitynameBtn;
+
+    public Button EditNameBtn;
+
     // Tabs
     private GameObject Tab1;
     private GameObject Tab2;
+
+    public Text Cityname;
+    public Text PlaceholderCityname;
+
+    public Text Cityname_Edit;
 
 
     void Start()
     {
         // Find Stuff
-        HUDL_U = GameObject.Find("Uitklapding");
+        HUDL_U = GameObject.Find("UitklapdingL");
         Tab1 = GameObject.Find("TabHUDL1");
         Tab2 = GameObject.Find("TabHUDL2");
 
@@ -31,6 +40,9 @@ public class HUDMain : MonoBehaviour
         // Set the button to the function
         ButtonHUD1.onClick.AddListener(ButtonHUD1_Click);
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
+
+        EditNameBtn.onClick.AddListener(EditNameBtn_Click);
+        ApplyCitynameBtn.onClick.AddListener(ApplyCitynameBtn_Click);
 
         // Do some other magic or sum lmfao
         Tab1.SetActive(false);
@@ -53,5 +65,24 @@ public class HUDMain : MonoBehaviour
 
         Tab1.SetActive(false);
         Tab2.SetActive(true);
+    }
+
+    void EditNameBtn_Click()
+    {
+        if (Cityname.text == "Navis City")
+        {
+            Cityname.text = "Cheese City";
+        } else {
+            Cityname.text = "Navis City";
+        }
+    }
+
+    void Update() {
+        PlaceholderCityname.text = Cityname.text;
+    }
+
+    void ApplyCitynameBtn_Click() {
+        Cityname_Edit.text = Cityname.text;
+        Debug.Log("Cityname: " + Cityname.text + " and Cityname_Edit: " + Cityname_Edit.text);
     }
 }
