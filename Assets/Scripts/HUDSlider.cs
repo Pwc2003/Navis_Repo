@@ -5,10 +5,14 @@ using UnityEngine.UI;
 
 public class HUDSlider : MonoBehaviour
 {
-    private Slider SliderObj;
+    private GameObject[] SliderObj; 
     void Start()
     {
-        SliderObj = GameObject.Find("Slider").GetComponent<Slider>();
-        SliderObj.enabled = false;
+        SliderObj = GameObject.FindGameObjectsWithTag("Slider");
+        
+        foreach (GameObject slider in SliderObj)
+        {
+            slider.GetComponent<Slider>().enabled = false;
+        }
     }
 }
