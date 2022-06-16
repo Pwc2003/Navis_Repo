@@ -4741,10 +4741,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u0440\u0438\u0432e\u0442! Welcome to our city, where our mayor
-    was slain in protests last year. The Communist Party would like to welcome you
-    as the next mayor beginning January 2084, and if you'd be observant you'd know
-    that's now! The best part is that you are not permitted to say no!\r\n\r\nThe
+  m_Text: "<b>\u041F\u0440\u0438\u0432e\u0442!</b> Welcome to our city, where our
+    mayor was slain in protests last year. The Communist Party would like to welcome
+    you as the next mayor beginning January 2084, and if you'd be observant you'd
+    know that's now! The best part is that you are not permitted to say no!\r\n\r\nThe
     Communist Party would appreciate it if you could make this city more self-sufficient.
     The city is in disarray, and you should fix it. Obviously, you have no expertise
     repairing a city after a severe failure, but let's get that fixed. We all have
@@ -4752,8 +4752,8 @@ MonoBehaviour:
     If something does go wrong however - like a dam breaking, please contact your
     local mayor for support - as long as they're still capable of answering, that
     is.\r\n\r\nDo you have any questions about that? Please examine the last word
-    of the first paragraph to see whether you are permitted to ask.\r\n\r\nBest Regards,\r\nJosef
-    Jalin\r\n"
+    of the first paragraph to see whether you are permitted to ask.\r\n\r\nBest Regards,\r\n<i>Josef
+    Jalin\r</i>\n"
 --- !u!222 &2075133596
 CanvasRenderer:
   m_ObjectHideFlags: 0
