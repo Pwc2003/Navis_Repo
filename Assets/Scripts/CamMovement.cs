@@ -8,14 +8,11 @@ public class CamMovement : MonoBehaviour
     private float rotZ = 1f;
     private float amountRot = 0f;
     private float moveVelo = 40f;
-    private float scrollVelo = 1000f;
+    private float scrollVelo = 1100f;
 
     private bool left;
     private bool right;
     private bool rotPlease;
-
-    //private float x = 0f;
-    //private float y = 0f;
 
     private Camera cam;
     private ButtonPresses bp;
@@ -82,6 +79,7 @@ public class CamMovement : MonoBehaviour
         }
 
         cam.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * scrollVelo * Time.deltaTime;
+        cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, 50f, 100f);
     }
 
     IEnumerator RotLeft()
