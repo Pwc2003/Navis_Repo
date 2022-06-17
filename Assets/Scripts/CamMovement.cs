@@ -1,9 +1,6 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Timers;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class CamMovement : MonoBehaviour
 {
@@ -24,9 +21,6 @@ public class CamMovement : MonoBehaviour
     private ButtonPresses bp;
 
     private Coroutine r;
-
-    private Timer timer;
-    private Time time;
 
     // Start is called before the first frame update
     void Start()
