@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Timers;
@@ -6,10 +7,10 @@ using UnityEngine.UI;
 
 public class CamMovement : MonoBehaviour
 {
-    private float rotVelo = 30f;
+    private float rotVelo = 55f;
     private float rotZ = 1f;
     private float amountRot = 0f;
-    private float moveVelo = 10f;
+    private float moveVelo = 40f;
     private float scrollVelo = 1000f;
 
     private bool left;
@@ -30,7 +31,7 @@ public class CamMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = GetComponent<Camera>();
+        cam = GetComponentInChildren<Camera>();
         bp = GetComponent<ButtonPresses>();
     }
 
