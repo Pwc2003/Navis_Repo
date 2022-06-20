@@ -8,6 +8,7 @@ TagManager:
   - SliderText
   - TutorialPan
   - CountdownBtn
+  - ProductionBuilding
   layers:
   - Default
   - TransparentFX

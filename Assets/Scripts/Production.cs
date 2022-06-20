@@ -32,22 +32,23 @@ public class Production : MonoBehaviour
     public Text energyText;
 
     //private fields
-    private float woodAmount = 0;
-    private float waterAmount = 0;
-    private float foodAmount = 0;
-    private float nonRenawableAmount = 0;
-    private float energyAmount = 0;
+    [Header("Resources")]
+    public float woodAmount = 0;
+    public float waterAmount = 0;
+    public float foodAmount = 0;
+    public float nonRenewableAmount = 0;
+    public float energyAmount = 0;
 
     private float timer = 0;
 
-    private bool produced;
+    [HideInInspector]public bool produced;
     private bool canProduce = true;
 
     //public fields but not visible in the inspector
     [HideInInspector]public string woodCounter;
     [HideInInspector]public string waterCounter;
     [HideInInspector]public string foodCounter;
-    [HideInInspector]public string nonRenawableCounter;
+    [HideInInspector]public string nonRenewableCounter;
     [HideInInspector]public string energyCounter;
 
     // Start is called before the first frame update
@@ -56,12 +57,12 @@ public class Production : MonoBehaviour
         woodCounter = "Wood: " + woodAmount;
         waterCounter = "Water: " + waterAmount;
         foodCounter = "Food: " + foodAmount;
-        nonRenawableCounter = "Non-renewable: " + nonRenawableAmount;
+        nonRenewableCounter = "Non-renewable: " + nonRenewableAmount;
         energyCounter = "Energy: " + energyAmount;
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         timer += Time.deltaTime;
         if(timer >= 1f && canProduce)
@@ -69,69 +70,31 @@ public class Production : MonoBehaviour
             if(wood)
             {
                 woodAmount += 1 * productionRate;
-                woodCounter = "Wood: " + woodAmount;
-                woodText.text = woodCounter;
                 produced = true;
             }
             else if(water)
             {
                 waterAmount += 1 * productionRate;
-                waterCounter = "Water: " + waterAmount;
-                waterText.text = waterCounter;
                 produced = true;
             }
             else if(food)
             {
                 foodAmount += 1 * productionRate;
-                foodCounter = "Food: " + foodAmount;
-                foodText.text = foodCounter;
                 produced = true;
             }
             else if(nonRenawable)
             {
-                nonRenawableAmount += 1 * productionRate;
-                nonRenawableCounter = "Non-renewable: " + nonRenawableAmount;
-                nonRenewableText.text = nonRenawableCounter;
+                nonRenewableAmount += 1 * productionRate;
                 produced = true;
             }
             else if(energy)
             {
                 energyAmount += 1 * productionRate;
-                energyCounter = "Energy: " + energyAmount;
-                energyText.text = energyCounter;
                 produced = true;
             }
             if(produced == true)
             {
                 timer = 0;
-
-                woodAmount -= woodProductionCost;
-                waterAmount -= waterProductionCost;
-                foodAmount -= foodProductionCost;
-                nonRenawableAmount -= nonRenewableProductionCost;
-                energyAmount -= energyProductionCost;
-
-                if(woodAmount < 0)
-                {
-                    canProduce = false;
-                }
-                else if(waterAmount < 0)
-                {
-                    canProduce = false;
-                }
-                else if(foodAmount < 0)
-                {
-                    canProduce = false;
-                }
-                else if(nonRenawableAmount < 0)
-                {
-                    canProduce = false;
-                }
-                else if(energyAmount < 0)
-                {
-                    canProduce = false;
-                }
-
                 produced = false;
             }
         }
