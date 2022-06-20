@@ -590,13 +590,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 416068062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34117648}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -616,7 +616,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Navis City
+  m_Text: Enter a new city name...
 --- !u!222 &416068065
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1073,7 +1073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Navis City
 --- !u!222 &830529724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3193,11 +3193,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ButtonHUD1: {fileID: 1576004330}
   ButtonHUD2: {fileID: 2023244236}
-  ApplyCitynameBtn: {fileID: 0}
   EditNameBtn: {fileID: 979301448}
-  Cityname: {fileID: 0}
+  Cityname: {fileID: 830529723}
   PlaceholderCityname: {fileID: 416068064}
-  Cityname_Edit: {fileID: 830529723}
   CtynameInput: {fileID: 2002444573}
 --- !u!1 &1561635501
 GameObject:
@@ -4176,7 +4174,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: Navis City
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
