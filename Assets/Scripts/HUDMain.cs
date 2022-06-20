@@ -27,25 +27,27 @@ public class HUDMain : MonoBehaviour
 
     public Text Cityname_Edit;
 
+    public InputField CtynameInput;
+
 
     void Start()
     {
         // Find Stuff
         HUDL_U = GameObject.Find("UitklapdingL");
-        HUDR_U = GameObject.Find("UitklapdingR");
+        //HUDR_U = GameObject.Find("UitklapdingR");
         Tab1 = GameObject.Find("TabHUDL1");
         Tab2 = GameObject.Find("TabHUDL2");
 
         // Do some magic with HudL_U
         HUDL_U.SetActive(false);
-        HUDR_U.SetActive(false);
+        //HUDR_U.SetActive(false);
 
         // Set the button to the function
         ButtonHUD1.onClick.AddListener(ButtonHUD1_Click);
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
 
-        EditNameBtn.onClick.AddListener(EditNameBtn_Click);
-        ApplyCitynameBtn.onClick.AddListener(ApplyCitynameBtn_Click);
+        //EditNameBtn.onClick.AddListener(EditNameBtn_Click);
+        //ApplyCitynameBtn.onClick.AddListener(ApplyCitynameBtn_Click);
 
         // Do some other magic or sum lmfao
         Tab1.SetActive(false);
@@ -75,16 +77,24 @@ public class HUDMain : MonoBehaviour
         HUDR_U.SetActive(!HUDR_U.activeSelf);
     }
 
-    void Update() {
-        PlaceholderCityname.text = Cityname.text;
+    //void Update() {
+    //    PlaceholderCityname.text = Cityname.text;
+//
+    //    if(Cityname_Edit.text == "")
+    //    {
+    //        ApplyCitynameBtn.interactable = false;
+    //    } else {
+    //        ApplyCitynameBtn.interactable = true;
+    //    }
 
-        if(Cityname_Edit.text == "")
-        {
-            ApplyCitynameBtn.interactable = false;
-        } else {
-            ApplyCitynameBtn.interactable = true;
-        }
-    }
+        //if(Input.GetKeyUp(KeyCode.Return)) {
+        //    if (HUDR_U.activeSelf)
+        //    {
+        //        ApplyCitynameBtn_Click();
+        //        Debug.Log("New city name: " + Cityname_Edit.text);
+        //    }
+        //}
+    //}
 
     void ApplyCitynameBtn_Click() {
         Cityname.text = Cityname_Edit.text;
