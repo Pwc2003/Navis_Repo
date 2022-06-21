@@ -9,6 +9,11 @@ TagManager:
   - TutorialPan
   - CountdownBtn
   - ProductionBuilding
+  - WoodBuilding
+  - WaterBuilding
+  - FoodBuilding
+  - NonRenewableBuilding
+  - Energy
   layers:
   - Default
   - TransparentFX

@@ -316,7 +316,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 96484572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5209b5c58c722c847a52411f786b21a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6bfe3f2e0d0cd174bbada1859ad557e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   woodText: {fileID: 32033897}
@@ -601,7 +601,7 @@ GameObject:
   - component: {fileID: 1150963774}
   m_Layer: 0
   m_Name: ProductionBuilding(Wood)
-  m_TagString: ProductionBuilding
+  m_TagString: WoodBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -715,6 +715,7 @@ MonoBehaviour:
   foodAmount: 0
   nonRenewableAmount: 0
   energyAmount: 0
+  produced: 0
   woodCounter: 
   waterCounter: 
   foodCounter: 
@@ -735,7 +736,7 @@ GameObject:
   - component: {fileID: 1509765528}
   m_Layer: 0
   m_Name: ProductionBuilding(Food)
-  m_TagString: ProductionBuilding
+  m_TagString: FoodBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -773,6 +774,7 @@ MonoBehaviour:
   foodAmount: 0
   nonRenewableAmount: 0
   energyAmount: 0
+  produced: 0
   woodCounter: 
   waterCounter: 
   foodCounter: 
@@ -1199,7 +1201,7 @@ GameObject:
   - component: {fileID: 2098323632}
   m_Layer: 0
   m_Name: ProductionBuilding(Wood) (1)
-  m_TagString: ProductionBuilding
+  m_TagString: WoodBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1237,6 +1239,7 @@ MonoBehaviour:
   foodAmount: 0
   nonRenewableAmount: 0
   energyAmount: 0
+  produced: 0
   woodCounter: 
   waterCounter: 
   foodCounter: 
@@ -1333,7 +1336,7 @@ GameObject:
   - component: {fileID: 2120861640}
   m_Layer: 0
   m_Name: ProductionBuilding(Water)
-  m_TagString: ProductionBuilding
+  m_TagString: WaterBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1371,6 +1374,7 @@ MonoBehaviour:
   foodAmount: 0
   nonRenewableAmount: 0
   energyAmount: 0
+  produced: 0
   woodCounter: 
   waterCounter: 
   foodCounter: 
