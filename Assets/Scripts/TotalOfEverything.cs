@@ -27,6 +27,8 @@ public class TotalOfEverything : MonoBehaviour
     private int iWo = 0;
     private int iWa = 0;
     private int iF = 0;
+    private int iE = 0;
+    private int iNR = 0;
 
     public Text woodText;
     public Text waterText;
@@ -109,13 +111,18 @@ public class TotalOfEverything : MonoBehaviour
             }
             for(iWa = 0; iWa < waterBuildings.Count; iWa++)
             {
-                totalWaterAmount += waterBuildings[iWa].GetComponent<Production>().amount;
+                totalWaterAmount += waterBuildings[iWa].GetComponent<WaterProduction>().amount;
                 waterBuildings[iWa].GetComponent<Production>().amount = 0;
             }
             for(iF = 0; iF < foodBuildings.Count; iF++)
             {
-                totalFoodAmount += foodBuildings[iF].GetComponent<Production>().amount;
+                totalFoodAmount += foodBuildings[iF].GetComponent<FoodProduction>().amount;
                 foodBuildings[iF].GetComponent<Production>().amount = 0;
+            }
+            for(iE = 0; iE < energyBuildings.Count; iE++)
+            {
+                totalEnergyAmount += energyBuildings[iE].GetComponent<ElectricityProduction>().amount;
+                energyBuildings[iE].GetComponent<ElectricityProduction>().amount = 0;
             }
             timer = 0;
         }

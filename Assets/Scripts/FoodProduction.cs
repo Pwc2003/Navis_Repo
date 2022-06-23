@@ -6,6 +6,7 @@ class FoodProduction : Production
 {
     void Update()
     {
+        Debug.Log(canProduce);
         timer += Time.deltaTime;
         CanProduce();
         Produce();
@@ -13,11 +14,13 @@ class FoodProduction : Production
 
     public override void Produce()
     {
-        if(timer >= 1f)
+        if(timer >= 1.2f)
         {
             if(canProduce)
             {
                 amount += productionRate;
+                totalAmounts.totalWaterAmount -= waterProductionCost;
+                totalAmounts.totalEnergyAmount -= foodProductionCost;
             }
             timer = 0;
         }

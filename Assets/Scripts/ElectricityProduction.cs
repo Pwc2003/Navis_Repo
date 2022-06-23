@@ -13,25 +13,14 @@ class ElectricityProduction : Production
 
     public override void Produce()
     {
-        if(timer >= 1f)
+        if(timer >= 0.9f)
         {
-            if(canProduce)
-            {
-                amount += productionRate;
-            }
+            amount += productionRate;
             timer = 0;
         }
     }
 
     public override void CanProduce()
     {
-        if(totalAmounts.totalWaterAmount - waterProductionCost >= 0)
-        {
-            canProduce = true;
-        }
-        else
-        {
-            canProduce = false;
-        }
     }
 }

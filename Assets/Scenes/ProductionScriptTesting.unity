@@ -699,13 +699,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 878cb842ae8f8414e8d00c0a5f0557c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionRate: 2
+  productionRate: 4
   amount: 0
   woodProductionCost: 0
-  waterProductionCost: 0
+  waterProductionCost: 2
   foodProductionCost: 0
   nonRenewableProductionCost: 0
-  energyProductionCost: 0
+  electricityProductionCost: 0
   canvas: {fileID: 96484572}
   produced: 0
 --- !u!1 &1206798874
@@ -723,7 +723,7 @@ GameObject:
   - component: {fileID: 1206798875}
   m_Layer: 0
   m_Name: ProductionBuilding(Electricity)
-  m_TagString: FoodBuilding
+  m_TagString: Energy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,16 +737,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1206798874}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14069808c2f5a4a48aebccf5e3e8c8cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 93ccb632df9eff64694b7623e203d07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionRate: 0
+  productionRate: 5
   amount: 0
   woodProductionCost: 0
   waterProductionCost: 0
   foodProductionCost: 0
   nonRenewableProductionCost: 0
-  energyProductionCost: 0
+  electricityProductionCost: 0
   canvas: {fileID: 96484572}
   produced: 0
 --- !u!65 &1206798876
@@ -857,13 +857,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14069808c2f5a4a48aebccf5e3e8c8cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionRate: 0
+  productionRate: 1
   amount: 0
   woodProductionCost: 0
-  waterProductionCost: 0
+  waterProductionCost: 2
   foodProductionCost: 0
   nonRenewableProductionCost: 0
-  energyProductionCost: 0
+  electricityProductionCost: 1
   canvas: {fileID: 96484572}
   produced: 0
 --- !u!65 &1509765529
@@ -1307,10 +1307,10 @@ MonoBehaviour:
   productionRate: 2
   amount: 0
   woodProductionCost: 0
-  waterProductionCost: 0
+  waterProductionCost: 1
   foodProductionCost: 0
   nonRenewableProductionCost: 0
-  energyProductionCost: 0
+  electricityProductionCost: 0
   canvas: {fileID: 96484572}
   produced: 0
 --- !u!65 &2098323633
@@ -1421,13 +1421,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48bdc7438a12e8a4ea30a8de41452e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionRate: 0
+  productionRate: 4
   amount: 0
   woodProductionCost: 0
   waterProductionCost: 0
   foodProductionCost: 0
   nonRenewableProductionCost: 0
-  energyProductionCost: 0
+  electricityProductionCost: 3
   canvas: {fileID: 96484572}
   produced: 0
 --- !u!65 &2120861641

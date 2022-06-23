@@ -14,11 +14,12 @@ class WoodProduction : Production
 
     public override void Produce()
     {
-        if(timer >= 1f)
+        if(timer >= 1.1f)
         {
             if(canProduce)
             {
                 amount += productionRate;
+                totalAmounts.totalWaterAmount -= waterProductionCost;
             }
             timer = 0;
         }
