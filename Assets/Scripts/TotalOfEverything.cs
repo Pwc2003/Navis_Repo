@@ -17,11 +17,11 @@ public class TotalOfEverything : MonoBehaviour
     private GameObject nonRenewableBuilding;
     private GameObject energyBuilding;
     
-    private float totalWoodAmount = 0;
-    private float totalWaterAmount = 0;
-    private float totalFoodAmount = 0;
-    private float totalNonRenewableAmount = 0;
-    private float totalEnergyAmount = 0;
+    [HideInInspector]public float totalWoodAmount = 0;
+    [HideInInspector]public float totalWaterAmount = 0;
+    [HideInInspector]public float totalFoodAmount = 0;
+    [HideInInspector]public float totalNonRenewableAmount = 0;
+    [HideInInspector]public float totalEnergyAmount = 0;
 
     private float timer = 0;
     private int iWo = 0;
@@ -102,21 +102,20 @@ public class TotalOfEverything : MonoBehaviour
     {   
         if(timer >= 1f)
         {
-            Debug.Log("Checking");
             for(iWo = 0; iWo < woodBuildings.Count; iWo++)
             {
-                totalWoodAmount += woodBuildings[iWo].GetComponent<Production>().woodAmount;
-                woodBuildings[iWo].GetComponent<Production>().woodAmount = 0;
+                totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().amount;
+                woodBuildings[iWo].GetComponent<WoodProduction>().amount = 0;
             }
             for(iWa = 0; iWa < waterBuildings.Count; iWa++)
             {
-                totalWaterAmount += waterBuildings[iWa].GetComponent<Production>().waterAmount;
-                waterBuildings[iWa].GetComponent<Production>().waterAmount = 0;
+                totalWaterAmount += waterBuildings[iWa].GetComponent<Production>().amount;
+                waterBuildings[iWa].GetComponent<Production>().amount = 0;
             }
             for(iF = 0; iF < foodBuildings.Count; iF++)
             {
-                totalFoodAmount += foodBuildings[iF].GetComponent<Production>().foodAmount;
-                foodBuildings[iF].GetComponent<Production>().foodAmount = 0;
+                totalFoodAmount += foodBuildings[iF].GetComponent<Production>().amount;
+                foodBuildings[iF].GetComponent<Production>().amount = 0;
             }
             timer = 0;
         }
