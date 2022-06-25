@@ -1,9 +1,24 @@
 fileFormatVersion: 2
-guid: 5d369bd57f1b5b340921fe43021b79cb
+guid: 6b38f797cff9c134facae3133f8604f2
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Dirt_light
+    second: {fileID: 2100000, guid: 1c7dec8be8d71f14cb13d0d9d937187a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_Dark
+    second: {fileID: 2100000, guid: afe0623a8b693564ebabe2814fa5fe0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_light
+    second: {fileID: 2100000, guid: 1a9f818f765cf474aaab66196c2ca8b9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -1,9 +1,39 @@
 fileFormatVersion: 2
-guid: 60dc884152c569b4ba99e4a950dfa5fa
+guid: 1da9b0aa3ed84544a89b30e6b4e9e618
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_Handel_
+    second: {fileID: 2100000, guid: a39651c2dde7b82479b1266f7cd66295, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 6e20d91e3cc43554d9dae82aa0e22728, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metalish_Gray_
+    second: {fileID: 2100000, guid: bda99d35dd0a21341932e6ddaf1820e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Solar_Panel_Blue
+    second: {fileID: 2100000, guid: 19445209261ecc74f87c57d85c21671a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_dark_
+    second: {fileID: 2100000, guid: d4ad17a890411dc48a7c6f78a65b45b2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood_light_
+    second: {fileID: 2100000, guid: 79eb238e69e34634da3e7680d334eec0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
