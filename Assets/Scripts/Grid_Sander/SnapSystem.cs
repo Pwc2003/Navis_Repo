@@ -6,6 +6,7 @@ public class SnapSystem : MonoBehaviour
 {
     public GameObject parent;
     public GameObject snapObject;
+    private GameObject snappedPoint;
 
     private Vector3 distance;
     private Vector3 range;
@@ -15,14 +16,26 @@ public class SnapSystem : MonoBehaviour
 
     private Plane plane =  new Plane(Vector3.up, Vector3.zero);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
+    {
+        Check();
+        if(Input.GetMouseButtonDown(0))
+        {
+            Build();
+        }
+    }
+
+    void Build()
+    {
+        if(snappedPoint != null)
+        {
+            snappedPoint.GetComponent<Renderer>().material.color = Color.red;
+            parent.GetComponent<GridSystem_Sander>().snapPoints.Remove(snappedPoint);
+        }
+    }
+
+    void Check()
     {
         float fDistance;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -38,7 +51,7 @@ public class SnapSystem : MonoBehaviour
             if(distance.magnitude < 10f)
             {
                 snapObject.transform.position = snapPoint.transform.position;
-                Debug.Log("worked");
+                snappedPoint = snapPoint;
             }
         }
     }
