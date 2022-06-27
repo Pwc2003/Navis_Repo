@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f9a37296ea8152f4e9021c56b0b7f3f1
+guid: 1da9b0aa3ed84544a89b30e6b4e9e618
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -7,33 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: df88f35e4ba4bf04984d498218848e19, type: 2}
+      name: Door_Handel_
+    second: {fileID: 2100000, guid: a39651c2dde7b82479b1266f7cd66295, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 18082ab1343478d4a9d0325f9a415338, type: 2}
+      name: Glass
+    second: {fileID: 2100000, guid: 6e20d91e3cc43554d9dae82aa0e22728, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 29e77e2f9dfbc8047bcd61aae9231b43, type: 2}
+      name: Metalish_Gray_
+    second: {fileID: 2100000, guid: bda99d35dd0a21341932e6ddaf1820e5, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 9433b80d86c486849a9da482f2f775b0, type: 2}
+      name: Solar_Panel_Blue
+    second: {fileID: 2100000, guid: 19445209261ecc74f87c57d85c21671a, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: geeeeeeeeeel
-    second: {fileID: 2100000, guid: 8bef9d8428615854882e8da34df264f7, type: 2}
+      name: Wood_dark_
+    second: {fileID: 2100000, guid: d4ad17a890411dc48a7c6f78a65b45b2, type: 2}
   - first:
-      type: UnityEngine:Texture2D
+      type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: styleguide-12 [Recovered]
-    second: {fileID: 2800000, guid: 976547d3b0fd39e46bee1bbd995fb277, type: 3}
+      name: Wood_light_
+    second: {fileID: 2100000, guid: 79eb238e69e34634da3e7680d334eec0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

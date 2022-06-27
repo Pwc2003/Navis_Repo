@@ -1,39 +1,9 @@
 fileFormatVersion: 2
-guid: f9a37296ea8152f4e9021c56b0b7f3f1
+guid: b83323157ce998d4aa796db3979a9ba9
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.001
-    second: {fileID: 2100000, guid: df88f35e4ba4bf04984d498218848e19, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.002
-    second: {fileID: 2100000, guid: 18082ab1343478d4a9d0325f9a415338, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.003
-    second: {fileID: 2100000, guid: 29e77e2f9dfbc8047bcd61aae9231b43, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.004
-    second: {fileID: 2100000, guid: 9433b80d86c486849a9da482f2f775b0, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: geeeeeeeeeel
-    second: {fileID: 2100000, guid: 8bef9d8428615854882e8da34df264f7, type: 2}
-  - first:
-      type: UnityEngine:Texture2D
-      assembly: UnityEngine.CoreModule
-      name: styleguide-12 [Recovered]
-    second: {fileID: 2800000, guid: 976547d3b0fd39e46bee1bbd995fb277, type: 3}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
