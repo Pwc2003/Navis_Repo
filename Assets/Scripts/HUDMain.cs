@@ -14,6 +14,8 @@ public class HUDMain : MonoBehaviour
     public Button ButtonHUD1;
     public Button ButtonHUD2;
 
+    public Button CounterButton;
+
     public Button EditNameBtn;
 
     // Tabs
@@ -32,13 +34,17 @@ public class HUDMain : MonoBehaviour
         HUDL_U = GameObject.Find("UitklapdingL");
         Tab1 = GameObject.Find("TabHUDL1");
         Tab2 = GameObject.Find("TabHUDL2");
+        HUDR_U = GameObject.Find("UitklapdingR");
+        CounterButton = GameObject.Find("CounterButton").GetComponent<Button>();
 
-        // Do some magic with HudL_U
+        // Do some magic with HudL_U and R
         HUDL_U.SetActive(false);
+        HUDR_U.SetActive(false);
 
         // Set the button to the function
         ButtonHUD1.onClick.AddListener(ButtonHUD1_Click);
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
+        CounterButton.onClick.AddListener(CounterButton_Click);
 
 
         // Do some other magic or sum lmfao
@@ -62,6 +68,16 @@ public class HUDMain : MonoBehaviour
 
         Tab1.SetActive(false);
         Tab2.SetActive(true);
+    }
+
+    void CounterButton_Click()
+    {   
+        if (HUDL_U.activeSelf)
+        {
+            HUDL_U.SetActive(false);
+        } else {
+            HUDR_U.SetActive(!HUDR_U.activeSelf);
+        }
     }
 
     void EditNameBtn_Click()
