@@ -13,7 +13,7 @@ public class GridSystem_Sander : MonoBehaviour
     private float newPositionY;
     private float newPositionZ;
 
-    private List<GameObject> snapPoints;
+    [HideInInspector]public List<GameObject> snapPoints;
 
     private Vector3 snapPosition = new Vector3(10f, 0f, 10f);
     private Vector3 change =  new Vector3(0f, 0f, 20f);
@@ -38,14 +38,5 @@ public class GridSystem_Sander : MonoBehaviour
     void Update()
     {
         
-    }
-
-    void Snap()
-    {
-        newPositionX = Mathf.Round(transform.position.x);
-        newPositionY = Mathf.Round(transform.position.y);
-        newPositionZ = Mathf.Round(transform.position.z);
-
-        transform.position = new Vector3((newPositionX * rowSize - 10), newPositionY, (newPositionZ * rowSize));
     }
 }
