@@ -73,6 +73,7 @@ public class Expedition : MonoBehaviour
                 Progressbar.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
                 ExpeditionStatus.text = "Expedition complete";
                 CostPrice.text = "Succesfully completed";
+                CancelBtn.gameObject.SetActive(false);
             }
         } else if (!Progressing) {
             if (Progressbar.gameObject.transform.localScale.x >= 0f) {
