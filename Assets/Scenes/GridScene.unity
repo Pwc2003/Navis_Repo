@@ -4361,8 +4361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -163.93433, y: 104.3}
-  m_SizeDelta: {x: 395.0635, y: 42.0033}
+  m_AnchoredPosition: {x: -124.108246, y: 104.3}
+  m_SizeDelta: {x: 474.7157, y: 42.0033}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1403709938
 MonoBehaviour:
@@ -4398,7 +4398,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Expeditions help recover lost resources, which cannot be made ecologically
-    friendly.
+    friendly. Expeditions have cooldowns both when failing or succeeding.
 --- !u!222 &1403709939
 CanvasRenderer:
   m_ObjectHideFlags: 0
