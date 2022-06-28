@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Expedition : MonoBehaviour
 {
     public Button BuyBtn;
+    public Button CancelBtn;
     public GameObject Progressbar;
     private bool Progressing;
     private bool FailCheck = true;
@@ -23,13 +24,17 @@ public class Expedition : MonoBehaviour
     void Start()
     {
         BuyBtn.onClick.AddListener(BuyBtn_Click);
+        CancelBtn.onClick.AddListener(CancelBtn_Click);
 
         num = Random.Range(0.5f, 0.99f);
         num2 = num + 0.1f;
+
+        CancelBtn.gameObject.SetActive(false);
     }
 
     void BuyBtn_Click() {
         Debug.Log("BuyBtn_Click");
+        CancelBtn.gameObject.SetActive(true);
         Progressing = true;
     }
 
@@ -45,6 +50,7 @@ public class Expedition : MonoBehaviour
                     ExpeditionStatus.text = "Expedition failed";
                     CostPrice.text = "Everything was lost";
                     Debug.Log("Random.value: " + Random.value);
+                    CancelBtn.gameObject.SetActive(false);
 
 
                     Progressing = false;
@@ -77,9 +83,17 @@ public class Expedition : MonoBehaviour
                 BuyBtn.interactable = true;
                 ExpeditionStatus.text = "Start expedition";
                 CostPrice.text = "Costs: Citizens, Food, Water";
+                CancelBtn.gameObject.SetActive(false);
                 progressbarimg.color = new Color(0.4316483f, 0.9433962f, 0.5404651f, 0.3921569f);
                 FailCheck = true;
             }
         }
+    }
+
+    void CancelBtn_Click() {
+        Progressing = false;
+        ExpeditionStatus.text = "Expedition cancelled";
+        CostPrice.text = "Returning...";
+        CancelBtn.gameObject.SetActive(false);
     }
 }
