@@ -5,12 +5,13 @@ using UnityEngine;
 public class SnapSystem : MonoBehaviour
 {
     public GameObject parent;
-    public GameObject snapObject;
+    private GameObject snapObject;
     private GameObject snappedPoint;
 
     private int index;
 
     private bool canBuild;
+    private bool built = false;
 
     private Vector3 distance;
     private Vector3 range;
@@ -20,10 +21,18 @@ public class SnapSystem : MonoBehaviour
 
     private Plane plane =  new Plane(Vector3.up, Vector3.zero);
 
+    void Start()
+    {
+        snapObject = GameObject.FindWithTag("SpawnedObject");
+    }
+
     // Update is called once per frame
     void Update()
     {
-        Check();
+        if(!built)
+        {
+            Check();
+        }
         Debug.Log(parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Count);
         if(Input.GetMouseButtonDown(0))
         {
@@ -48,7 +57,7 @@ public class SnapSystem : MonoBehaviour
                     canBuild = false;
                 }
                 //for multi cell building
-                if(canBuild)
+                if(canBuild && !built)
                 {
                     snappedPoint.GetComponent<Renderer>().material.color = Color.red;
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
@@ -62,6 +71,9 @@ public class SnapSystem : MonoBehaviour
 
                     parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
+
+                    snapObject.transform.position = snappedPoint.transform.position;
+                    built = true;
                 }
             }
             if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 > 10f)
@@ -76,7 +88,7 @@ public class SnapSystem : MonoBehaviour
                     canBuild = false;
                 }
                 //for multi cell building
-                if(canBuild)
+                if(canBuild && !built)
                 {
                     snappedPoint.GetComponent<Renderer>().material.color = Color.red;
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
@@ -90,6 +102,9 @@ public class SnapSystem : MonoBehaviour
 
                     parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
+
+                    snapObject.transform.position = snappedPoint.transform.position;
+                    built = true;
                 }
             }
         }
