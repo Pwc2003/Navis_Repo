@@ -2453,7 +2453,7 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: The Atlantic Expedition brings you to the atlantic. Underwater temples
-    will be found, lost resources will be recovered. <b>High risk, High reward</b>.
+    will be found, lost resources will be recovered. <b>High risk, high reward</b>.
 --- !u!222 &881807636
 CanvasRenderer:
   m_ObjectHideFlags: 0
