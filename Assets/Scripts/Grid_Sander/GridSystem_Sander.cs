@@ -14,6 +14,8 @@ public class GridSystem_Sander : MonoBehaviour
     private float newPositionZ;
 
     [HideInInspector]public List<GameObject> snapPoints;
+    [HideInInspector]public List<GameObject> availableSnapPoints;
+    [HideInInspector]public List<GameObject> removedSnapPoints;
 
     private Vector3 snapPosition = new Vector3(10f, 0f, 10f);
     private Vector3 change =  new Vector3(0f, 0f, 20f);
@@ -24,12 +26,14 @@ public class GridSystem_Sander : MonoBehaviour
     void Start()
     {
         snapPoints = new List<GameObject>();
+        removedSnapPoints = new List<GameObject>();
         for(int i = 0; i <= 50; i++)
         {
             for(int j = 0; j <= 50; j++)
             {
                 snapPointInList = Instantiate(snapPoint, snapPosition + j * change, Quaternion.identity);
                 snapPoints.Add(snapPointInList);
+                availableSnapPoints.Add(snapPointInList);
             }
             snapPosition += new Vector3(20f, 0f, 0f);
         }
