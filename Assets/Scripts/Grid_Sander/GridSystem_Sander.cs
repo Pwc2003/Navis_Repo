@@ -17,15 +17,16 @@ public class GridSystem_Sander : MonoBehaviour
 
     private Vector3 snapPosition = new Vector3(10f, 0f, 10f);
     private Vector3 change =  new Vector3(0f, 0f, 20f);
+    private Vector3 renderRange;
 
 
     // Start is called before the first frame update
     void Start()
     {
         snapPoints = new List<GameObject>();
-        for(int i = 0; i <= 20; i++)
+        for(int i = 0; i <= 50; i++)
         {
-            for(int j = 0; j <= 20; j++)
+            for(int j = 0; j <= 50; j++)
             {
                 snapPointInList = Instantiate(snapPoint, snapPosition + j * change, Quaternion.identity);
                 snapPoints.Add(snapPointInList);
@@ -37,6 +38,5 @@ public class GridSystem_Sander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }
