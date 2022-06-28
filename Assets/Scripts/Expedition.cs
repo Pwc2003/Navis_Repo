@@ -26,8 +26,6 @@ public class Expedition : MonoBehaviour
 
         num = Random.Range(0.5f, 0.99f);
         num2 = num + 0.1f;
-        Debug.Log(num);
-        Debug.Log(num2);
     }
 
     void BuyBtn_Click() {
