@@ -8,11 +8,13 @@ public class HUDMain : MonoBehaviour
     // Very important thingies
     private GameObject HUDL_U;
     private GameObject HUDR_U;
+    private GameObject HUDL_EXP;
 
 
     // Buttons
     public Button ButtonHUD1;
     public Button ButtonHUD2;
+    public Button ButtonHUD3;
 
     public Button CounterButton;
 
@@ -35,15 +37,18 @@ public class HUDMain : MonoBehaviour
         Tab1 = GameObject.Find("TabHUDL1");
         Tab2 = GameObject.Find("TabHUDL2");
         HUDR_U = GameObject.Find("UitklapdingR");
+        HUDL_EXP = GameObject.Find("UitklapdingExpeditions");
         CounterButton = GameObject.Find("CounterButton").GetComponent<Button>();
 
         // Do some magic with HudL_U and R
         HUDL_U.SetActive(false);
         HUDR_U.SetActive(false);
+        //HUDL_EXP.SetActive(false);
 
         // Set the button to the function
         ButtonHUD1.onClick.AddListener(ButtonHUD1_Click);
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
+        ButtonHUD3.onClick.AddListener(ButtonHUD3_Click);
         CounterButton.onClick.AddListener(CounterButton_Click);
 
 
@@ -78,6 +83,14 @@ public class HUDMain : MonoBehaviour
         } else {
             HUDR_U.SetActive(!HUDR_U.activeSelf);
         }
+    }
+
+    void ButtonHUD3_Click() {
+        if (HUDL_EXP.gameObject.transform.localScale.x == 1) {
+            HUDL_EXP.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        } else {
+            HUDL_EXP.gameObject.transform.localScale = new Vector3(1, 1, 1);
+        } 
     }
 
     void EditNameBtn_Click()
