@@ -19,7 +19,7 @@ class WaterProduction : Production
             if(canProduce)
             {
                 amount += productionRate;
-                totalAmounts.totalEnergyAmount -= electricityProductionCost;
+                totalAmounts.totalEnergyProduction -= electricityUsageCost;
             }
             timer = 0;
         }
@@ -27,7 +27,7 @@ class WaterProduction : Production
 
     public override void CanProduce()
     {
-        if(totalAmounts.totalEnergyAmount - electricityProductionCost >= 0)
+        if(totalAmounts.totalEnergyProduction - electricityUsageCost >= 0)
         {
             canProduce = true;
         }
