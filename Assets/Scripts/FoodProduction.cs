@@ -19,8 +19,8 @@ class FoodProduction : Production
             if(canProduce)
             {
                 amount += productionRate;
-                totalAmounts.totalWaterAmount -= waterProductionCost;
-                totalAmounts.totalEnergyAmount -= foodProductionCost;
+                totalAmounts.totalWaterProduction -= waterUsageCost;
+                totalAmounts.totalEnergyProduction -= electricityUsageCost;
             }
             timer = 0;
         }
@@ -28,7 +28,7 @@ class FoodProduction : Production
 
     public override void CanProduce()
     {
-        if(totalAmounts.totalWaterAmount - waterProductionCost >= 0 && totalAmounts.totalEnergyAmount - electricityProductionCost >= 0)
+        if(totalAmounts.totalWaterProduction - waterUsageCost >= 0 && totalAmounts.totalEnergyProduction - electricityUsageCost >= 0)
         {
             canProduce = true;
         }
