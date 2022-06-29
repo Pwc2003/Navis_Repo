@@ -10,18 +10,22 @@ public class TotalOfEverything : MonoBehaviour
     private List<GameObject> foodBuildings;
     private List<GameObject> nonRenewableBuildings;
     private List<GameObject> energyBuildings;
+    private List<GameObject> housingBuildings;
     
     private GameObject woodBuilding;
     private GameObject waterBuilding;
     private GameObject foodBuilding;
     private GameObject nonRenewableBuilding;
     private GameObject energyBuilding;
+    private GameObject housingBuilding;
     
     [HideInInspector]public float totalWoodAmount = 0;
-    [HideInInspector]public float totalWaterAmount = 0;
+    [HideInInspector]public float totalWaterProduction = 0;
     [HideInInspector]public float totalFoodAmount = 0;
     [HideInInspector]public float totalNonRenewableAmount = 0;
-    [HideInInspector]public float totalEnergyAmount = 0;
+    [HideInInspector]public float totalEnergyProduction = 0;
+    [HideInInspector]public float totalPopulationAmount = 0;
+
 
     private float timer = 0;
     private int iWo = 0;
@@ -29,12 +33,14 @@ public class TotalOfEverything : MonoBehaviour
     private int iF = 0;
     private int iE = 0;
     private int iNR = 0;
+    private int iP = 0;
 
     public Text woodText;
     public Text waterText;
     public Text foodText;
     public Text nonRenewableText;
     public Text energyText;
+    public Text populationText;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +50,7 @@ public class TotalOfEverything : MonoBehaviour
         foodBuildings = new List<GameObject>();
         nonRenewableBuildings = new List<GameObject>();
         energyBuildings = new List<GameObject>();
+        housingBuildings = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -55,10 +62,11 @@ public class TotalOfEverything : MonoBehaviour
         UpdateResources();
 
         woodText.text = "wood: " + totalWoodAmount;
-        waterText.text = "water: " + totalWaterAmount;
+        waterText.text = "water: " + totalWaterProduction;
         foodText.text = "food: " + totalFoodAmount;
         nonRenewableText.text = "nonrenewable: " + totalNonRenewableAmount;
-        energyText.text = "energy: " + totalEnergyAmount;
+        energyText.text = "energy: " + totalEnergyProduction;
+        populationText.text = "population: " + totalPopulationAmount;
     }
 
     void HowManyBuildings()
@@ -98,6 +106,13 @@ public class TotalOfEverything : MonoBehaviour
                 energyBuildings.Add(building);
             }
         }
+        foreach (GameObject building in GameObject.FindGameObjectsWithTag("HousingBuilding"))
+        {
+            if(!housingBuildings.Contains(building))
+            {
+                housingBuildings.Add(building);
+            }
+        }
     }
 
     void UpdateResources()
@@ -111,7 +126,7 @@ public class TotalOfEverything : MonoBehaviour
             }
             for(iWa = 0; iWa < waterBuildings.Count; iWa++)
             {
-                totalWaterAmount += waterBuildings[iWa].GetComponent<WaterProduction>().amount;
+                totalWaterProduction += waterBuildings[iWa].GetComponent<WaterProduction>().amount;
                 waterBuildings[iWa].GetComponent<Production>().amount = 0;
             }
             for(iF = 0; iF < foodBuildings.Count; iF++)
@@ -121,8 +136,13 @@ public class TotalOfEverything : MonoBehaviour
             }
             for(iE = 0; iE < energyBuildings.Count; iE++)
             {
-                totalEnergyAmount += energyBuildings[iE].GetComponent<ElectricityProduction>().amount;
+                totalEnergyProduction += energyBuildings[iE].GetComponent<ElectricityProduction>().amount;
                 energyBuildings[iE].GetComponent<ElectricityProduction>().amount = 0;
+            }
+            for(iP = 0; iP < housingBuildings.Count; iP++)
+            {
+                totalPopulationAmount += housingBuildings[iP].GetComponent<PopulationProduction>().amount;
+                housingBuildings[iP].GetComponent<PopulationProduction>().amount = 0;
             }
             timer = 0;
         }
