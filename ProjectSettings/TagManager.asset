@@ -14,7 +14,7 @@ TagManager:
   - FoodBuilding
   - NonRenewableBuilding
   - Energy
-  - HousingBuilding
+  - SpawnedObject
   layers:
   - Default
   - TransparentFX
