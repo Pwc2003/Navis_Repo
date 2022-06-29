@@ -16,6 +16,8 @@ public class SettingsMenu : MonoBehaviour
 
     private int currentSceneIndex;
 
+    public Button ApplyBtn;
+
 
     void Start()
     {
@@ -39,6 +41,8 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        ApplyBtn.onClick.AddListener(ApplySettings);
     }
 
     public void SetResolution (int resolutionIndex)
@@ -74,11 +78,18 @@ public class SettingsMenu : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-            SceneManager.LoadScene(0);
-        }
+        // DEZE SHIT STAAT OOK IN APPLY SETITNGS XXXX
+        //if(Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //    PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+        //    SceneManager.LoadScene(0);
+        //}
+    }
+
+    public void ApplySettings() {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+        SceneManager.LoadScene(0);
     }
 }
