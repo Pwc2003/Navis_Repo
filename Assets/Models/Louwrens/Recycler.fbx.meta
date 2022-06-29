@@ -3,7 +3,42 @@ guid: 6a89616e8e246364cbd9c8062b0c91ee
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: basic
+    second: {fileID: 2100000, guid: deeeaa2192e854b4487b8f7bd0d5b7ad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cilinders
+    second: {fileID: 2100000, guid: ea6bad9e28c87504b9a73e1c6811444f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: duno
+    second: {fileID: 2100000, guid: 3ff83cb2c42e7ac4ab7f979ddf12ebb3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: gate
+    second: {fileID: 2100000, guid: 084c3d4cfe524da478e552affa1d0d67, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: kozijn
+    second: {fileID: 2100000, guid: 81e4854ac6a0ef74482e8aafc81ec3c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: raam
+    second: {fileID: 2100000, guid: 3325e96982805e643a4e1420f5c2b8d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: roof
+    second: {fileID: 2100000, guid: 4a5b9f20bbebe7a438f9eb6439d06f70, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
