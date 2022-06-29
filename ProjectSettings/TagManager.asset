@@ -14,12 +14,9 @@ TagManager:
   - FoodBuilding
   - NonRenewableBuilding
   - Energy
-<<<<<<< Updated upstream
-  - SpawnedObject
-=======
   - HousingBuilding
   - Expedition
->>>>>>> Stashed changes
+  - testing tag
   layers:
   - Default
   - TransparentFX
