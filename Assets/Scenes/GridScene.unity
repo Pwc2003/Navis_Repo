@@ -4810,7 +4810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productionRate: 0
-  productGain: 0
+  productGain: 50
   amount: 0
   woodProductionCost: 0
   foodProductionCost: 0
@@ -4820,7 +4820,7 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
-  canvas: {fileID: 0}
+  canvas: {fileID: 1554918043}
   produced: 0
   BuyBtn: {fileID: 593648940}
   CancelBtn: {fileID: 272688580}
@@ -6048,7 +6048,7 @@ GameObject:
   - component: {fileID: 1657761445}
   m_Layer: 5
   m_Name: Expedition3
-  m_TagString: Untagged
+  m_TagString: NonRenewableBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6090,7 +6090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   productionRate: 0
-  productGain: 0
+  productGain: 50
   amount: 0
   woodProductionCost: 0
   foodProductionCost: 0
@@ -6100,7 +6100,7 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
-  canvas: {fileID: 0}
+  canvas: {fileID: 1554918043}
   produced: 0
   BuyBtn: {fileID: 682396566}
   CancelBtn: {fileID: 1005264877}
