@@ -46,6 +46,8 @@ sysinfo.txt
 
 # Specific files
 EditorSettings.asset
+EditorUserSettings.asset
 
 # Crashlytics generated file
 crashlytics-build.properties
+UserSettings/EditorUserSettings.asset

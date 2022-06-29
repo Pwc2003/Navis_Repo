@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-class WoodProduction : Production
+class PopulationProduction : Production
 {
-    
+
     void Update()
     {
         timer += Time.deltaTime;
@@ -14,12 +14,11 @@ class WoodProduction : Production
 
     public override void Produce()
     {
-        if(timer >= 1.1f)
+        if(timer >= 1f)
         {
             if(canProduce)
             {
                 amount += productionRate;
-                totalAmounts.totalWaterProduction -= waterUsageCost;
             }
             timer = 0;
         }
@@ -27,13 +26,6 @@ class WoodProduction : Production
 
     public override void CanProduce()
     {
-        if(totalAmounts.totalWaterProduction - waterUsageCost >= 0)
-        {
-            canProduce = true;
-        }
-        else
-        {
-            canProduce = false;
-        }
+        
     }
 }
