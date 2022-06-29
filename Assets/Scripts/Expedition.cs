@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Expedition : MonoBehaviour
+class Expedition : Production
 {
     public Button BuyBtn;
     public Button CancelBtn;
@@ -74,6 +74,7 @@ public class Expedition : MonoBehaviour
                 ExpeditionStatus.text = "Expedition complete";
                 CostPrice.text = "Succesfully completed";
                 CancelBtn.gameObject.SetActive(false);
+                Produce();
             }
         } else if (!Progressing) {
             if (Progressbar.gameObject.transform.localScale.x >= 0f) {
@@ -96,5 +97,11 @@ public class Expedition : MonoBehaviour
         ExpeditionStatus.text = "Expedition cancelled";
         CostPrice.text = "Returning...";
         CancelBtn.gameObject.SetActive(false);
+    }
+
+    public override void Produce()
+    {
+        Debug.Log("Testing lol");
+        amount += Mathf.Round(1000.0f*(productGain * (Chance_of_Failure*69.0f) / (50.0f*Speed)));
     }
 }

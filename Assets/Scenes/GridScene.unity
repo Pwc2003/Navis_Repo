@@ -1687,7 +1687,7 @@ GameObject:
   - component: {fileID: 493739308}
   - component: {fileID: 493739307}
   m_Layer: 5
-  m_Name: TextCntr
+  m_Name: NonRenewableCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4768,7 +4768,7 @@ GameObject:
   - component: {fileID: 1362731263}
   m_Layer: 5
   m_Name: Expedition2
-  m_TagString: Untagged
+  m_TagString: NonRenewableBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4809,6 +4809,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2b43955c48b2746ac69ce03ebbefc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  productionRate: 0
+  productGain: 0
+  amount: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  canvas: {fileID: 0}
+  produced: 0
   BuyBtn: {fileID: 593648940}
   CancelBtn: {fileID: 272688580}
   Progressbar: {fileID: 877794580}
@@ -5498,6 +5511,7 @@ GameObject:
   - component: {fileID: 1554918045}
   - component: {fileID: 1554918044}
   - component: {fileID: 1554918048}
+  - component: {fileID: 1554918049}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -5607,6 +5621,30 @@ MonoBehaviour:
   Cityname: {fileID: 830529723}
   PlaceholderCityname: {fileID: 416068064}
   CtynameInput: {fileID: 2002444573}
+--- !u!114 &1554918049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554918043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bfe3f2e0d0cd174bbada1859ad557e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalWoodAmount: 0
+  totalWaterProduction: 0
+  totalFoodAmount: 0
+  totalNonRenewableAmount: 0
+  totalEnergyProduction: 0
+  totalPopulationAmount: 0
+  woodText: {fileID: 1429417133}
+  waterText: {fileID: 1429417133}
+  foodText: {fileID: 1429417133}
+  nonRenewableText: {fileID: 493739307}
+  energyText: {fileID: 1172782532}
+  populationText: {fileID: 2108941890}
 --- !u!1 &1561635501
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,7 +5855,7 @@ GameObject:
   - component: {fileID: 1592184041}
   m_Layer: 5
   m_Name: Expedition1
-  m_TagString: Untagged
+  m_TagString: NonRenewableBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5896,13 +5934,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2b43955c48b2746ac69ce03ebbefc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  productionRate: 100
+  productGain: 50
+  amount: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  canvas: {fileID: 1554918043}
+  produced: 0
   BuyBtn: {fileID: 81016010}
   CancelBtn: {fileID: 1187535816}
   Progressbar: {fileID: 560487195}
   ExpeditionStatus: {fileID: 377709659}
   CostPrice: {fileID: 183156013}
-  Speed: 0.03
-  Chance_of_Failure: 0.1
+  Speed: 0.9
+  Chance_of_Failure: 0.01
   progressbarimg: {fileID: 560487197}
 --- !u!1 &1621300752
 GameObject:
@@ -6038,6 +6089,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2b43955c48b2746ac69ce03ebbefc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  productionRate: 0
+  productGain: 0
+  amount: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  canvas: {fileID: 0}
+  produced: 0
   BuyBtn: {fileID: 682396566}
   CancelBtn: {fileID: 1005264877}
   Progressbar: {fileID: 1214939199}

@@ -8,6 +8,7 @@ abstract class Production : MonoBehaviour
 
     [Header("Production rates per second")]
     [SerializeField] protected float productionRate = 0;
+    [SerializeField] protected float productGain = 0;
 
     [HideInInspector]public float amount;
 

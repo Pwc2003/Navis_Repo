@@ -11,6 +11,7 @@ public class TotalOfEverything : MonoBehaviour
     private List<GameObject> nonRenewableBuildings;
     private List<GameObject> energyBuildings;
     private List<GameObject> housingBuildings;
+    private List<GameObject> expeditions;
     
     private GameObject woodBuilding;
     private GameObject waterBuilding;
@@ -18,6 +19,7 @@ public class TotalOfEverything : MonoBehaviour
     private GameObject nonRenewableBuilding;
     private GameObject energyBuilding;
     private GameObject housingBuilding;
+    private GameObject expedition;
     
     [HideInInspector]public float totalWoodAmount = 0;
     [HideInInspector]public float totalWaterProduction = 0;
@@ -34,6 +36,7 @@ public class TotalOfEverything : MonoBehaviour
     private int iE = 0;
     private int iNR = 0;
     private int iP = 0;
+    private int iExp = 0;
 
     public Text woodText;
     public Text waterText;
@@ -51,6 +54,7 @@ public class TotalOfEverything : MonoBehaviour
         nonRenewableBuildings = new List<GameObject>();
         energyBuildings = new List<GameObject>();
         housingBuildings = new List<GameObject>();
+        expeditions = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -64,7 +68,7 @@ public class TotalOfEverything : MonoBehaviour
         woodText.text = "wood: " + totalWoodAmount;
         waterText.text = "water: " + totalWaterProduction;
         foodText.text = "food: " + totalFoodAmount;
-        nonRenewableText.text = "nonrenewable: " + totalNonRenewableAmount;
+        nonRenewableText.text = " " + totalNonRenewableAmount;
         energyText.text = "energy: " + totalEnergyProduction;
         populationText.text = "population: " + totalPopulationAmount;
     }
@@ -113,6 +117,13 @@ public class TotalOfEverything : MonoBehaviour
                 housingBuildings.Add(building);
             }
         }
+        foreach (GameObject building in GameObject.FindGameObjectsWithTag("Expedition"))
+        {
+            if(!expeditions.Contains(building))
+            {
+                expeditions.Add(building);
+            }
+        }
     }
 
     void UpdateResources()
@@ -143,6 +154,11 @@ public class TotalOfEverything : MonoBehaviour
             {
                 totalPopulationAmount += housingBuildings[iP].GetComponent<PopulationProduction>().amount;
                 housingBuildings[iP].GetComponent<PopulationProduction>().amount = 0;
+            }
+            for(iNR = 0; iNR < nonRenewableBuildings.Count; iNR++)
+            {
+                totalNonRenewableAmount += nonRenewableBuildings[iNR].GetComponent<Expedition>().amount;
+                nonRenewableBuildings[iNR].GetComponent<Expedition>().amount = 0;
             }
             timer = 0;
         }
