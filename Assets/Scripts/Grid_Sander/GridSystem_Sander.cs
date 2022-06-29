@@ -7,7 +7,7 @@ public class GridSystem_Sander : MonoBehaviour
     public GameObject snapPoint;
     private GameObject snapPointInList;
 
-    private int rowSize = 20;
+    private int cellAmount = 50;
 
     private float newPositionX;
     private float newPositionY;
@@ -27,9 +27,9 @@ public class GridSystem_Sander : MonoBehaviour
     {
         snapPoints = new List<GameObject>();
         removedSnapPoints = new List<GameObject>();
-        for(int i = 0; i <= 50; i++)
+        for(int i = 0; i <= cellAmount; i++)
         {
-            for(int j = 0; j <= 50; j++)
+            for(int j = 0; j <= cellAmount; j++)
             {
                 snapPointInList = Instantiate(snapPoint, snapPosition + j * change, Quaternion.identity);
                 snapPoints.Add(snapPointInList);
