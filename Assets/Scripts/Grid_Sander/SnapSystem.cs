@@ -7,8 +7,9 @@ public class SnapSystem : MonoBehaviour
     public GameObject parent;
     private GameObject snapObject;
     private GameObject snappedPoint;
-
     private GameObject thisObject;
+
+    private List<GameObject> buildings;
 
     private int index;
 
@@ -17,7 +18,7 @@ public class SnapSystem : MonoBehaviour
 
     private Vector3 distance;
     private Vector3 range;
-    public Vector3 worldPosition;
+    private Vector3 worldPosition;
 
     private Vector3 mousePos;
 
@@ -27,6 +28,8 @@ public class SnapSystem : MonoBehaviour
     {
         snapObject = GameObject.FindWithTag("SpawnedObject");
         thisObject = GameObject.Find("Check");
+
+        buildings = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -40,6 +43,7 @@ public class SnapSystem : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Build();
+            Select();
             if(built)
             {
                 foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().removedSnapPoints)
@@ -47,10 +51,6 @@ public class SnapSystem : MonoBehaviour
                     snapPoint.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
                 }
             }
-        }
-        if(built)
-        {
-            thisObject.SetActive(false);
         }
     }
 
@@ -89,6 +89,7 @@ public class SnapSystem : MonoBehaviour
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
 
                     snapObject.transform.position = snappedPoint.transform.position;
+                    buildings.Add(snapObject);
                     built = true;
                 }
             }
@@ -122,6 +123,7 @@ public class SnapSystem : MonoBehaviour
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
 
                     snapObject.transform.position = snappedPoint.transform.position;
+                    buildings.Add(snapObject);
                     built = true;
                 }
             }
@@ -147,6 +149,33 @@ public class SnapSystem : MonoBehaviour
                 snapObject.transform.position = snapPoint.transform.position;
                 snappedPoint = snapPoint;
                 index = parent.GetComponent<GridSystem_Sander>().snapPoints.IndexOf(snappedPoint);
+            }
+        }
+    }
+
+    void Select()
+    {
+        float fDistance;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (plane.Raycast(ray, out fDistance))
+        {
+            worldPosition = ray.GetPoint(fDistance);
+        }
+
+        transform.position = worldPosition;
+
+        foreach(GameObject building in buildings)
+        {
+            distance = building.transform.position - transform.position;
+
+            if(distance.magnitude < 10f)
+            {
+                Debug.Log("worked");
+                building.GetComponent<TestForSelection>().selected = true;
+            }
+            if(building.GetComponent<TestForSelection>().selected)
+            {
+                building.GetComponentInChildren<Renderer>().material.color = Color.red;
             }
         }
     }
