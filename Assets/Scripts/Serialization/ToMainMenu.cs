@@ -9,32 +9,33 @@ public class ToMainMenu : MonoBehaviour
 
    public void LoadMainMenu()
    {
-       currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-       PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-       SceneManager.LoadScene(0);
+      currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+      PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+      SceneManager.LoadScene(0);
    }
 
    public void Quit()
    {
-        #if UNITY_EDITOR
-           UnityEditor.EditorApplication.isPlaying = false;
-        #else
-           Application.Quit();
-        #endif
+      #if UNITY_EDITOR
+         UnityEditor.EditorApplication.isPlaying = false;
+      #else
+         Application.Quit();
+      #endif
    }
 
    public void LoadOptions()
    {
-       currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-       PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-       SceneManager.LoadScene(2);
+      currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+      PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+      SceneManager.LoadScene(2);
    }
 
    public void LoadCredits()
    {
       currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-       PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-       SceneManager.LoadScene(3);
+      PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
+      SceneManager.LoadScene(3);
+      Debug.Log("Credits");
    }
 
    public void StartPleaseForTheLoveofGod()
