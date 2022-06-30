@@ -6,6 +6,7 @@ public class GridSystem_Sander : MonoBehaviour
 {
     public GameObject snapPoint;
     private GameObject snapPointInList;
+    private GameObject plane;
 
     private int cellAmount = 50;
 
@@ -33,6 +34,7 @@ public class GridSystem_Sander : MonoBehaviour
             {
                 snapPointInList = Instantiate(snapPoint, snapPosition + j * change, Quaternion.identity);
                 snapPoints.Add(snapPointInList);
+                snapPointInList.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
                 availableSnapPoints.Add(snapPointInList);
             }
             snapPosition += new Vector3(20f, 0f, 0f);

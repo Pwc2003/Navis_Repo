@@ -8,6 +8,8 @@ public class SnapSystem : MonoBehaviour
     private GameObject snapObject;
     private GameObject snappedPoint;
 
+    private GameObject thisObject;
+
     private int index;
 
     private bool canBuild;
@@ -24,6 +26,7 @@ public class SnapSystem : MonoBehaviour
     void Start()
     {
         snapObject = GameObject.FindWithTag("SpawnedObject");
+        thisObject = GameObject.Find("Check");
     }
 
     // Update is called once per frame
@@ -37,6 +40,17 @@ public class SnapSystem : MonoBehaviour
         if(Input.GetMouseButtonDown(0))
         {
             Build();
+            if(built)
+            {
+                foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().removedSnapPoints)
+                {
+                    snapPoint.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
+                }
+            }
+        }
+        if(built)
+        {
+            thisObject.SetActive(false);
         }
     }
 
@@ -60,14 +74,16 @@ public class SnapSystem : MonoBehaviour
                 if(canBuild && !built)
                 {
                     snappedPoint.GetComponent<Renderer>().material.color = Color.red;
+                    
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
+                    parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
 
-                    parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51].GetComponent<Renderer>().material.color = Color.green; //Let's us see if it works
+                    parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51].GetComponent<Renderer>().material.color = Color.red; //Let's us see if it works
 
                     parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
 
-                    parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51].GetComponent<Renderer>().material.color = Color.green;
+                    parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51].GetComponent<Renderer>().material.color = Color.red;
 
                     parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
@@ -91,14 +107,16 @@ public class SnapSystem : MonoBehaviour
                 if(canBuild && !built)
                 {
                     snappedPoint.GetComponent<Renderer>().material.color = Color.red;
+
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
+                    parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
                     
-                    parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1].GetComponent<Renderer>().material.color = Color.green; //Let's us see if it works
+                    parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1].GetComponent<Renderer>().material.color = Color.red; //Let's us see if it works
 
                     parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
 
-                    parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1].GetComponent<Renderer>().material.color = Color.green;
+                    parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1].GetComponent<Renderer>().material.color = Color.red;
 
                     parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
                     parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
