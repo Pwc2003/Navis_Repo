@@ -9,6 +9,7 @@ public class HUDMain : MonoBehaviour
     private GameObject HUDL_U;
     private GameObject HUDR_U;
     private GameObject HUDL_EXP;
+    private GameObject HUDR_ROT;
 
 
     // Buttons
@@ -17,8 +18,8 @@ public class HUDMain : MonoBehaviour
     public Button ButtonHUD3;
 
     public Button CounterButton;
-
     public Button EditNameBtn;
+    public Button RotatBtn;
 
     // Tabs
     private GameObject Tab1;
@@ -38,6 +39,7 @@ public class HUDMain : MonoBehaviour
         Tab2 = GameObject.Find("TabHUDL2");
         HUDR_U = GameObject.Find("UitklapdingR");
         HUDL_EXP = GameObject.Find("UitklapdingExpeditions");
+        HUDR_ROT = GameObject.Find("UitklapdingRotate");
         CounterButton = GameObject.Find("CounterButton").GetComponent<Button>();
 
         // Do some magic with HudL_U and R
@@ -50,6 +52,7 @@ public class HUDMain : MonoBehaviour
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
         ButtonHUD3.onClick.AddListener(ButtonHUD3_Click);
         CounterButton.onClick.AddListener(CounterButton_Click);
+        RotatBtn.onClick.AddListener(RotatBtn_Click);
 
 
         // Do some other magic or sum lmfao
@@ -91,6 +94,14 @@ public class HUDMain : MonoBehaviour
         } else {
             HUDL_EXP.gameObject.transform.localScale = new Vector3(1, 1, 1);
         } 
+    }
+
+    void RotatBtn_Click() {
+        if (HUDR_ROT.gameObject.transform.localScale.x == 1) {
+            HUDR_ROT.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        } else {
+            HUDR_ROT.gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
     }
 
     void EditNameBtn_Click()
