@@ -17,6 +17,8 @@ TagManager:
   - HousingBuilding
   - Expedition
   - testing tag
+  - SpawnedObject
+  - UI
   layers:
   - Default
   - TransparentFX

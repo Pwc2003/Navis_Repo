@@ -5,11 +5,13 @@ using UnityEngine;
 public class SnapSystem : MonoBehaviour
 {
     public GameObject parent;
+    public GameObject menu;
+
     private GameObject snapObject;
     private GameObject snappedPoint;
     private GameObject thisObject;
 
-    private List<GameObject> buildings;
+    public List<GameObject> buildings;
 
     private int index;
 
@@ -40,16 +42,20 @@ public class SnapSystem : MonoBehaviour
             Check();
         }
         Debug.Log(parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Count);
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !built)
         {
             Build();
             Select();
-            if(built)
+        }
+        if(Input.GetMouseButtonDown(0) && built)
+        {
+            Select();
+        }
+        if(built)
+        {
+            foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().removedSnapPoints)
             {
-                foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().removedSnapPoints)
-                {
-                    snapPoint.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
-                }
+                snapPoint.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
             }
         }
     }
@@ -170,12 +176,12 @@ public class SnapSystem : MonoBehaviour
 
             if(distance.magnitude < 10f)
             {
-                Debug.Log("worked");
                 building.GetComponent<TestForSelection>().selected = true;
             }
             if(building.GetComponent<TestForSelection>().selected)
             {
                 building.GetComponentInChildren<Renderer>().material.color = Color.red;
+                menu.SetActive(true);
             }
         }
     }
