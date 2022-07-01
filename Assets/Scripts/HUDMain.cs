@@ -24,6 +24,7 @@ public class HUDMain : MonoBehaviour
     public Button EditNameBtn;
     public Button RotatBtn;
     private Button MinimiseBtn;
+    private Button ResetLocationsBtn;
 
     // Tabs
     private GameObject Tab1;
@@ -33,6 +34,12 @@ public class HUDMain : MonoBehaviour
     public Text PlaceholderCityname;
 
     public InputField CtynameInput;
+
+    Vector3 ObjectivesTabLocation;
+    Vector3 HUDR_ULocation;
+    Vector3 HUDL_EXPLocation;
+    Vector3 HUDR_ROTLocation;
+
 
 
     void Start()
@@ -48,6 +55,7 @@ public class HUDMain : MonoBehaviour
         ObjectivesTab = GameObject.Find("ObjectivesTAB");
         MinimiseBtn = GameObject.Find("MinimiseBtn").GetComponent<Button>();
         Objective1 = GameObject.Find("Objective1");
+        ResetLocationsBtn = GameObject.Find("ResetBtn").GetComponent<Button>();
 
         // Do some magic with HudL_U and R
         HUDL_U.SetActive(false);
@@ -61,6 +69,7 @@ public class HUDMain : MonoBehaviour
         CounterButton.onClick.AddListener(CounterButton_Click);
         RotatBtn.onClick.AddListener(RotatBtn_Click);
         MinimiseBtn.onClick.AddListener(MinimiseBtn_Click);
+        ResetLocationsBtn.onClick.AddListener(ResetLocationsBtn_Click);
 
 
         // Do some other magic or sum lmfao
@@ -68,6 +77,23 @@ public class HUDMain : MonoBehaviour
         Tab2.SetActive(false);
 
         Cityname.text = "Navis City";
+
+        ObjectivesTabLocation = ObjectivesTab.gameObject.transform.localPosition;
+        HUDR_ULocation = HUDR_U.gameObject.transform.localPosition;
+        HUDL_EXPLocation = HUDL_EXP.gameObject.transform.localPosition;
+        HUDR_ROTLocation = HUDR_ROT.gameObject.transform.localPosition;
+
+
+
+        Debug.Log("ObjectivesTabLocation: " + ObjectivesTabLocation);
+    }
+
+    void Update() {
+        if (ObjectivesTabLocation != ObjectivesTab.gameObject.transform.localPosition || HUDR_ULocation != HUDR_U.gameObject.transform.localPosition || HUDL_EXPLocation != HUDL_EXP.gameObject.transform.localPosition || HUDR_ROTLocation != HUDR_ROT.gameObject.transform.localPosition) {
+            ResetLocationsBtn.gameObject.transform.localScale = new Vector3(1, 1, 1);
+        } else {
+            ResetLocationsBtn.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        }
     }
 
     void MinimiseBtn_Click() {
@@ -130,5 +156,12 @@ public class HUDMain : MonoBehaviour
     void EditNameBtn_Click()
     {
         HUDR_U.SetActive(!HUDR_U.activeSelf);
+    }
+
+    void ResetLocationsBtn_Click() {
+        ObjectivesTab.gameObject.transform.localPosition = ObjectivesTabLocation;
+        HUDR_U.gameObject.transform.localPosition = HUDR_ULocation;
+        HUDL_EXP.gameObject.transform.localPosition = HUDL_EXPLocation;
+        HUDR_ROT.gameObject.transform.localPosition = HUDR_ROTLocation;
     }
 }
