@@ -11,6 +11,9 @@ public class HUDMain : MonoBehaviour
     private GameObject HUDL_EXP;
     private GameObject HUDR_ROT;
 
+    private GameObject ObjectivesTab;
+    private GameObject Objective1;
+
 
     // Buttons
     public Button ButtonHUD1;
@@ -20,6 +23,7 @@ public class HUDMain : MonoBehaviour
     public Button CounterButton;
     public Button EditNameBtn;
     public Button RotatBtn;
+    private Button MinimiseBtn;
 
     // Tabs
     private GameObject Tab1;
@@ -41,6 +45,9 @@ public class HUDMain : MonoBehaviour
         HUDL_EXP = GameObject.Find("UitklapdingExpeditions");
         HUDR_ROT = GameObject.Find("UitklapdingRotate");
         CounterButton = GameObject.Find("CounterButton").GetComponent<Button>();
+        ObjectivesTab = GameObject.Find("ObjectivesTAB");
+        MinimiseBtn = GameObject.Find("MinimiseBtn").GetComponent<Button>();
+        Objective1 = GameObject.Find("Objective1");
 
         // Do some magic with HudL_U and R
         HUDL_U.SetActive(false);
@@ -53,6 +60,7 @@ public class HUDMain : MonoBehaviour
         ButtonHUD3.onClick.AddListener(ButtonHUD3_Click);
         CounterButton.onClick.AddListener(CounterButton_Click);
         RotatBtn.onClick.AddListener(RotatBtn_Click);
+        MinimiseBtn.onClick.AddListener(MinimiseBtn_Click);
 
 
         // Do some other magic or sum lmfao
@@ -60,6 +68,21 @@ public class HUDMain : MonoBehaviour
         Tab2.SetActive(false);
 
         Cityname.text = "Navis City";
+    }
+
+    void MinimiseBtn_Click() {
+        RectTransform ObjectivesTabrt = ObjectivesTab.GetComponent<RectTransform>();
+
+        if (ObjectivesTabrt.sizeDelta.y == 485f)
+        {
+            ObjectivesTabrt.sizeDelta = new Vector2(487.8538f, 175f);
+            Objective1.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+        }
+        else
+        {
+            ObjectivesTabrt.sizeDelta = new Vector2(487.8538f, 485f);
+            Objective1.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
     void ButtonHUD1_Click()
