@@ -2680,6 +2680,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e919fd9ebcd654b8f513f9843a9e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateLeft: 0
+  rotateRight: 0
 --- !u!1 &555178685
 GameObject:
   m_ObjectHideFlags: 0
@@ -7904,8 +7906,8 @@ MonoBehaviour:
   Progressbar: {fileID: 560487195}
   ExpeditionStatus: {fileID: 377709659}
   CostPrice: {fileID: 183156013}
-  Speed: 0.03
-  Chance_of_Failure: 0.01
+  Speed: 0.05
+  Chance_of_Failure: 0.2
   progressbarimg: {fileID: 560487197}
 --- !u!1 &1621300752
 GameObject:
@@ -8602,6 +8604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e919fd9ebcd654b8f513f9843a9e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotateLeft: 0
+  rotateRight: 0
 --- !u!1 &1811668930
 GameObject:
   m_ObjectHideFlags: 0
