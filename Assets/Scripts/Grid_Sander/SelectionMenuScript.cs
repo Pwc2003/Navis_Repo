@@ -10,6 +10,9 @@ public class SelectionMenuScript : MonoBehaviour
 
     private GameObject selectedBuilding;
 
+    public bool rotateLeft;
+    public bool rotateRight;
+
     void Start()
     {
         canvas = GameObject.Find("IDK");
@@ -20,6 +23,20 @@ public class SelectionMenuScript : MonoBehaviour
     {
         FindObject();
         Destroy(selectedBuilding);
+    }
+
+    public void RotateLeft()
+    {
+        FindObject();
+        selectedBuilding.transform.Rotate(new Vector3(0, -90, 0));
+        rotateLeft = true;
+    }
+
+    public void RotateRight()
+    {
+        FindObject();
+        selectedBuilding.transform.Rotate(new Vector3(0, 90, 0));
+        rotateRight = true;
     }
 
     private void FindObject()

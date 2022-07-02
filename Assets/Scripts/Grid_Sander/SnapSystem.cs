@@ -5,7 +5,6 @@ using UnityEngine;
 public class SnapSystem : MonoBehaviour
 {
     public GameObject parent;
-    public GameObject menu;
 
     private GameObject snapObject;
     private GameObject snappedPoint;
@@ -62,7 +61,7 @@ public class SnapSystem : MonoBehaviour
 
     void Build()
     {
-        if(snappedPoint != null)
+        if(snappedPoint != null && !parent.GetComponent<MouseOnUI>().OnMouseOver())
         {
             Debug.Log(snapObject.GetComponentInChildren<Renderer>().bounds.size.x);
             if(snapObject.GetComponentInChildren<Renderer>().bounds.size.x/2 > 10f)
@@ -181,7 +180,6 @@ public class SnapSystem : MonoBehaviour
             if(building.GetComponent<TestForSelection>().selected)
             {
                 building.GetComponentInChildren<Renderer>().material.color = Color.red;
-                menu.SetActive(true);
             }
         }
     }
