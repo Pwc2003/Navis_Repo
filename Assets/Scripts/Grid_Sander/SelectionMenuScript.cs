@@ -15,8 +15,10 @@ public class SelectionMenuScript : MonoBehaviour
 
     void Start()
     {
-        canvas = GameObject.Find("IDK");
         check = GameObject.Find("Check");
+    }
+    void Update()
+    {
     }
 
     public void Destroy()
@@ -28,15 +30,12 @@ public class SelectionMenuScript : MonoBehaviour
     public void RotateLeft()
     {
         FindObject();
-        selectedBuilding.transform.Rotate(new Vector3(0, -90, 0));
-        rotateLeft = true;
+        selectedBuilding.transform.Rotate(new Vector3(0, -90f, 0));
     }
-
     public void RotateRight()
     {
         FindObject();
         selectedBuilding.transform.Rotate(new Vector3(0, 90, 0));
-        rotateRight = true;
     }
 
     private void FindObject()

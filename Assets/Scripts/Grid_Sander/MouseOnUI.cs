@@ -17,11 +17,9 @@ public class MouseOnUI : MonoBehaviour
         {
             panels.Add(panel);
         }
-        Debug.Log(panels.Count);
     }
     void Update()
     {
-        Debug.Log(OnMouseOver());
     }
     // Update is called once per frame
     public bool OnMouseOver()
