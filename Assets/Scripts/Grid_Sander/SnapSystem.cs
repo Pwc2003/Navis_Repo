@@ -6,7 +6,7 @@ public class SnapSystem : MonoBehaviour
 {
     public GameObject parent;
 
-    private GameObject snapObject;
+    [HideInInspector] public GameObject snapObject;
     private GameObject snappedPoint;
     private GameObject thisObject;
 
@@ -29,7 +29,6 @@ public class SnapSystem : MonoBehaviour
 
     void Start()
     {
-        snapObject = GameObject.FindWithTag("SpawnedObject");
         thisObject = GameObject.Find("Check");
 
         buildings = new List<GameObject>();
@@ -38,13 +37,12 @@ public class SnapSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("x: " + snapObject.GetComponentInChildren<Renderer>().bounds.size.x);
-        //Debug.Log("z: " + snapObject.GetComponentInChildren<Renderer>().bounds.size.z);
-        if(!built)
+        Check();
+        if(snapObject == null)
         {
-            Check();
+            built = false;
         }
-        if(Input.GetMouseButtonDown(0) && !built)
+        if(Input.GetMouseButtonDown(0))
         {
             Build();
             Select();
@@ -53,22 +51,12 @@ public class SnapSystem : MonoBehaviour
         {
             Select();
         }
-        if(built)
+        if(Input.GetMouseButtonDown(0) && built)
         {
             foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().removedSnapPoints)
             {
                 snapPoint.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.red;
             }
-        }
-
-        rotation = snapObject.transform.rotation.eulerAngles;
-
-        if(rotation.y <= 180f && rotation.y >= -90f && rotation.y != 0)
-        {
-            CheckSize();
-            CheckSizeRotation();
-            Debug.Log("x: " + snapObject.GetComponentInChildren<Renderer>().bounds.size.x);
-            Debug.Log("z: " + snapObject.GetComponentInChildren<Renderer>().bounds.size.z);
         }
     }
 
@@ -159,6 +147,7 @@ public class SnapSystem : MonoBehaviour
                 parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
+                snapObject.tag = "PlacedObject";
                 built = true;
             }
         }
@@ -190,39 +179,10 @@ public class SnapSystem : MonoBehaviour
 
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
+                snapObject.tag = "PlacedObject";
+                snapObject = null;
                 built = true;
             }
         }
-    }
-
-    public void CheckSizeRotation()
-    {
-        if(snapObject.GetComponentInChildren<Renderer>().bounds.size.x/2 < 10f)
-        {
-            parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
-            parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51].GetComponent<Renderer>().material.color = Color.green; //Let's us see if it works
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51].GetComponent<Renderer>().material.color = Color.green;
-        }
-        else
-        {
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51].GetComponent<Renderer>().material.color = Color.red;
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51].GetComponent<Renderer>().material.color = Color.red;
-        }
-        
-            //checking if the object can be placed on the grid with the available snap points on the z-axis
-        if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 < 10f)
-        {
-            parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
-            parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1].GetComponent<Renderer>().material.color = Color.green; //Let's us see if it works
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1].GetComponent<Renderer>().material.color = Color.green;
-        }
-        else
-        {
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1].GetComponent<Renderer>().material.color = Color.red;
-            parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1].GetComponent<Renderer>().material.color = Color.red;
-        }
-        
     }
 }

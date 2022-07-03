@@ -8,6 +8,8 @@ public class GridSystem_Sander : MonoBehaviour
     private GameObject snapPointInList;
     private GameObject plane;
 
+    public GameObject check;
+
     private int cellAmount = 50;
 
     private float newPositionX;
@@ -38,6 +40,17 @@ public class GridSystem_Sander : MonoBehaviour
                 availableSnapPoints.Add(snapPointInList);
             }
             snapPosition += new Vector3(20f, 0f, 0f);
+        }
+    }
+    private void Update()
+    {
+        if(GameObject.FindWithTag("SpawnedObject") != null)
+        {
+            check.SetActive(true);
+        }
+        else
+        {
+            check.SetActive(false);
         }
     }
 }
