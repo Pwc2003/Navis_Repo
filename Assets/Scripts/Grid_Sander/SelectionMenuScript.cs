@@ -78,6 +78,38 @@ public class SelectionMenuScript : MonoBehaviour
         check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
     }
 
+    public void SpawnSchool()
+    {
+        spawnedBuilding = Instantiate(school1, new Vector3(0, 0, 0), Quaternion.identity);
+        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+    }
+
+    public void SpawnSocialBuilding()
+    {
+        spawnedBuilding = Instantiate(socialBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+    }
+
+    public void SpawnHospital()
+    {
+        spawnedBuilding = Instantiate(Hospital1, new Vector3(0, 0, 0), Quaternion.identity);
+        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+    }
+
+    public void SpawnShop()
+    {
+        spawnedBuilding = Instantiate(Shop1, new Vector3(0, 0, 0), Quaternion.identity);
+        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+    }
+
+    public void SpawnProductionBuilding()
+    {
+        spawnedBuilding = Instantiate(productionBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+    }
+
+    
+
     private void FindObject()
     {
         foreach(GameObject building in check.GetComponent<SnapSystem>().buildings)
