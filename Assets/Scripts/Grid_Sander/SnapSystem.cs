@@ -16,6 +16,8 @@ public class SnapSystem : MonoBehaviour
 
     private bool canBuild;
     private bool built = false;
+    private bool checked1;
+    private bool checked2;
 
     private Vector3 distance;
     private Vector3 range;
@@ -148,8 +150,13 @@ public class SnapSystem : MonoBehaviour
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
                 snapObject.tag = "PlacedObject";
+                checked1 = true;
                 built = true;
             }
+        }
+        else
+        {
+            checked1 = true;
         }
         if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 > 10f)
         {
@@ -180,9 +187,18 @@ public class SnapSystem : MonoBehaviour
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
                 snapObject.tag = "PlacedObject";
-                snapObject = null;
+                checked2 = true;
                 built = true;
             }
+        }
+        else
+        {
+            checked2 = true;
+        }
+
+        if(checked1 && checked2)
+        {
+            snapObject = null;
         }
     }
 }

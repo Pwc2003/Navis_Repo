@@ -58,12 +58,18 @@ public class SelectionMenuScript : MonoBehaviour
     public void RotateLeft()
     {
         FindObject();
-        check.GetComponent<SnapSystem>().snapObject.transform.Rotate(new Vector3(0, -90f, 0));
+        if(check.GetComponent<SnapSystem>().snapObject != null)
+        {
+            check.GetComponent<SnapSystem>().snapObject.transform.Rotate(new Vector3(0, -90f, 0));
+        }
     }
     public void RotateRight()
     {
         FindObject();
-        check.GetComponent<SnapSystem>().snapObject.transform.Rotate(new Vector3(0, 90, 0));
+        if(check.GetComponent<SnapSystem>().snapObject != null)
+        {
+            check.GetComponent<SnapSystem>().snapObject.transform.Rotate(new Vector3(0, 90f, 0));
+        }
     }
 
     public void SpawnFlat()

@@ -80,6 +80,10 @@ public class CamMovement : MonoBehaviour
 
         cam.fieldOfView -= Input.GetAxis("Mouse ScrollWheel") * scrollVelo * Time.deltaTime;
         cam.fieldOfView = Mathf.Clamp(cam.fieldOfView, 50f, 100f);
+        Vector3 pos = transform.position;
+        pos.x = Mathf.Clamp(transform.position.x, 0f, 1060f);
+        pos.z = Mathf.Clamp(transform.position.z, 0f, 1060f);
+        transform.position = pos;
     }
 
     IEnumerator RotLeft()
