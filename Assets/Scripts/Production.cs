@@ -11,7 +11,8 @@ abstract class Production : MonoBehaviour
     [SerializeField] protected float productGain = 0;
 
     [HideInInspector]public float amount;
-
+    [HideInInspector]public float happiness;
+    [HideInInspector]public float ecologie;
     //resources that it costs to produce 1 item
     [Header("Resources it costs per time it produces")]
     [SerializeField] protected float woodProductionCost = 0;

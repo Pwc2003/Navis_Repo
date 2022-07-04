@@ -10,6 +10,10 @@ public class HUDMain : MonoBehaviour
     private GameObject HUDR_U;
     private GameObject HUDL_EXP;
     private GameObject HUDR_ROT;
+    private GameObject HUDM_LAY;
+
+    private GameObject ObjectivesTab;
+    private GameObject Objective1;
 
 
     // Buttons
@@ -20,6 +24,11 @@ public class HUDMain : MonoBehaviour
     public Button CounterButton;
     public Button EditNameBtn;
     public Button RotatBtn;
+    private Button MinimiseBtn;
+    private Button ResetLocationsBtn;
+    private Button LayoutStnsMnBtn;
+    private Button SaveLayoutBtn;
+    private Button FactoryLayoutBtn;
 
     // Tabs
     private GameObject Tab1;
@@ -29,6 +38,19 @@ public class HUDMain : MonoBehaviour
     public Text PlaceholderCityname;
 
     public InputField CtynameInput;
+
+    Vector3 ObjectivesTabLocation;
+    Vector3 HUDR_ULocation;
+    Vector3 HUDL_EXPLocation;
+    Vector3 HUDR_ROTLocation;
+    Vector3 HUDM_LAYLocation;
+
+    Vector3 ObjectivesTabLocationD;
+    Vector3 HUDR_ULocationD;
+    Vector3 HUDL_EXPLocationD;
+    Vector3 HUDR_ROTLocationD;
+    Vector3 HUDM_LAYLocationD;
+
 
 
     void Start()
@@ -41,6 +63,14 @@ public class HUDMain : MonoBehaviour
         HUDL_EXP = GameObject.Find("UitklapdingExpeditions");
         HUDR_ROT = GameObject.Find("UitklapdingRotate");
         CounterButton = GameObject.Find("CounterButton").GetComponent<Button>();
+        ObjectivesTab = GameObject.Find("ObjectivesTAB");
+        MinimiseBtn = GameObject.Find("MinimiseBtn").GetComponent<Button>();
+        Objective1 = GameObject.Find("Objective1");
+        ResetLocationsBtn = GameObject.Find("ResetViewBtn").GetComponent<Button>();
+        LayoutStnsMnBtn = GameObject.Find("SettingsMenBtn").GetComponent<Button>();
+        HUDM_LAY = GameObject.Find("UitklapdingPosSettings");
+        SaveLayoutBtn = GameObject.Find("SaveViewBtn").GetComponent<Button>();
+        FactoryLayoutBtn = GameObject.Find("FactoryLayoutBtn").GetComponent<Button>();
 
         // Do some magic with HudL_U and R
         HUDL_U.SetActive(false);
@@ -53,6 +83,11 @@ public class HUDMain : MonoBehaviour
         ButtonHUD3.onClick.AddListener(ButtonHUD3_Click);
         CounterButton.onClick.AddListener(CounterButton_Click);
         RotatBtn.onClick.AddListener(RotatBtn_Click);
+        MinimiseBtn.onClick.AddListener(MinimiseBtn_Click);
+        ResetLocationsBtn.onClick.AddListener(ResetLocationsBtn_Click);
+        LayoutStnsMnBtn.onClick.AddListener(LayoutStnsMnBtn_Click);
+        SaveLayoutBtn.onClick.AddListener(SaveLayoutBtn_Click);
+        FactoryLayoutBtn.onClick.AddListener(FactoryLayoutBtn_Click);
 
 
         // Do some other magic or sum lmfao
@@ -60,6 +95,48 @@ public class HUDMain : MonoBehaviour
         Tab2.SetActive(false);
 
         Cityname.text = "Navis City";
+
+        ObjectivesTabLocation = ObjectivesTab.gameObject.transform.localPosition;
+        HUDR_ULocation = HUDR_U.gameObject.transform.localPosition;
+        HUDL_EXPLocation = HUDL_EXP.gameObject.transform.localPosition;
+        HUDR_ROTLocation = HUDR_ROT.gameObject.transform.localPosition;
+        HUDM_LAYLocation = HUDM_LAY.gameObject.transform.localPosition;
+
+        ObjectivesTabLocationD = ObjectivesTabLocation;
+        HUDR_ULocationD = HUDR_ULocation;
+        HUDL_EXPLocationD = HUDL_EXPLocation;
+        HUDR_ROTLocationD = HUDR_ROTLocation;
+        HUDM_LAYLocationD = HUDM_LAYLocation;
+
+
+
+        Debug.Log("ObjectivesTabLocation: " + ObjectivesTabLocation);
+
+        HUDL_EXP.gameObject.transform.localScale = new Vector3(0, 0, 0);
+    }
+
+    void Update() {
+        if (ObjectivesTabLocation != ObjectivesTab.gameObject.transform.localPosition || HUDR_ULocation != HUDR_U.gameObject.transform.localPosition || HUDL_EXPLocation != HUDL_EXP.gameObject.transform.localPosition || HUDR_ROTLocation != HUDR_ROT.gameObject.transform.localPosition) {
+            LayoutStnsMnBtn.gameObject.transform.localScale = new Vector3(1, 1, 1);
+        } else {
+            LayoutStnsMnBtn.gameObject.transform.localScale = new Vector3(0, 0, 0);
+            HUDM_LAY.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        }
+    }
+
+    void MinimiseBtn_Click() {
+        RectTransform ObjectivesTabrt = ObjectivesTab.GetComponent<RectTransform>();
+
+        if (ObjectivesTabrt.sizeDelta.y == 485f)
+        {
+            ObjectivesTabrt.sizeDelta = new Vector2(487.8538f, 175f);
+            Objective1.gameObject.transform.localScale = new Vector3(0f, 0f, 0f);
+        }
+        else
+        {
+            ObjectivesTabrt.sizeDelta = new Vector2(487.8538f, 485f);
+            Objective1.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
     void ButtonHUD1_Click()
@@ -104,8 +181,40 @@ public class HUDMain : MonoBehaviour
         }
     }
 
+    void LayoutStnsMnBtn_Click() {
+        if (HUDM_LAY.gameObject.transform.localScale.x == 1) {
+            HUDM_LAY.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        } else {
+            HUDM_LAY.gameObject.transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
     void EditNameBtn_Click()
     {
         HUDR_U.SetActive(!HUDR_U.activeSelf);
+    }
+
+    void ResetLocationsBtn_Click() {
+        ObjectivesTab.gameObject.transform.localPosition = ObjectivesTabLocation;
+        HUDR_U.gameObject.transform.localPosition = HUDR_ULocation;
+        HUDL_EXP.gameObject.transform.localPosition = HUDL_EXPLocation;
+        HUDR_ROT.gameObject.transform.localPosition = HUDR_ROTLocation;
+        HUDM_LAY.gameObject.transform.localPosition = HUDM_LAYLocation;
+    }
+
+    void SaveLayoutBtn_Click() {
+        ObjectivesTabLocation = ObjectivesTab.gameObject.transform.localPosition;
+        HUDR_ULocation = HUDR_U.gameObject.transform.localPosition;
+        HUDL_EXPLocation = HUDL_EXP.gameObject.transform.localPosition;
+        HUDR_ROTLocation = HUDR_ROT.gameObject.transform.localPosition;
+        HUDM_LAYLocation = HUDM_LAY.gameObject.transform.localPosition;
+    }
+
+    void FactoryLayoutBtn_Click() {
+        ObjectivesTab.gameObject.transform.localPosition = ObjectivesTabLocationD;
+        HUDR_U.gameObject.transform.localPosition = HUDR_ULocationD;
+        HUDL_EXP.gameObject.transform.localPosition = HUDL_EXPLocationD;
+        HUDR_ROT.gameObject.transform.localPosition = HUDR_ROTLocationD;
+        HUDM_LAY.gameObject.transform.localPosition = HUDM_LAYLocationD;
     }
 }

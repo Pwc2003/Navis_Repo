@@ -8,6 +8,8 @@ public class GridSystem_Sander : MonoBehaviour
     private GameObject snapPointInList;
     private GameObject plane;
 
+    public GameObject check;
+
     private int cellAmount = 50;
 
     private float newPositionX;
@@ -40,9 +42,7 @@ public class GridSystem_Sander : MonoBehaviour
             snapPosition += new Vector3(20f, 0f, 0f);
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
     }
 }

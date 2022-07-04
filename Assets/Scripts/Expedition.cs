@@ -19,8 +19,14 @@ class Expedition : Production
 
     [Range(0.0f, 1f)] public float Speed;
     [Range(0.0f, 1f)] public float Chance_of_Failure;
-
     public Image progressbarimg;
+
+    public Text ExpeditionCounter;
+    private int ExpeditionTotal;
+
+    // EXPEDITION REWARDS!!! DON'T TOUCH PLS I BEG UWU 
+    private float ExpeditionRewardMinimum = 750f;
+    private float ExpeditionRewardMaximum = 2500f;
     void Start()
     {
         BuyBtn.onClick.AddListener(BuyBtn_Click);
@@ -39,6 +45,10 @@ class Expedition : Production
     }
 
     void Update() {
+
+        ExpeditionTotal = int.Parse(ExpeditionCounter.text);
+
+        
         if (Progressing) {
             if (Progressbar.gameObject.transform.localScale.x < 1) {
 
@@ -73,6 +83,8 @@ class Expedition : Production
                 Progressbar.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
                 ExpeditionStatus.text = "Expedition complete";
                 CostPrice.text = "Succesfully completed";
+                ExpeditionTotal +=  1;
+                ExpeditionCounter.text = ExpeditionTotal.ToString();  
                 CancelBtn.gameObject.SetActive(false);
                 Produce();
             }
@@ -101,7 +113,12 @@ class Expedition : Production
 
     public override void Produce()
     {
-        Debug.Log("Testing lol");
-        amount += Mathf.Round(1000.0f*(productGain * (Chance_of_Failure*69.0f) / (50.0f*Speed)));
+        float amountminrec = Mathf.Round((500*ExpeditionRewardMinimum-100*ExpeditionRewardMaximum)/24);
+        float amountmaxrec = Mathf.Round(10*ExpeditionRewardMinimum-0.5f*amountminrec);
+        amount += Mathf.Round(Speed * amountminrec + Chance_of_Failure * amountmaxrec);
+
+        Debug.Log("Amountminrec: " + amountminrec);
+        Debug.Log("Amountmaxrec: " + amountmaxrec);
+        Debug.Log("Amount: " + amount);
     }
 }
