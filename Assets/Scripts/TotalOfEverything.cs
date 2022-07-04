@@ -13,6 +13,8 @@ public class TotalOfEverything : MonoBehaviour
     private List<GameObject> housingBuildings;
     private List<GameObject> expeditions;
     private List<GameObject> specialBuildings;
+    private List<GameObject> planten;
+    private List<GameObject> greenHousing;
     
     private GameObject woodBuilding;
     private GameObject waterBuilding;
@@ -22,6 +24,9 @@ public class TotalOfEverything : MonoBehaviour
     private GameObject housingBuilding;
     private GameObject expedition;
     private GameObject specialBuilding;
+    private GameObject plant;
+    private GameObject greenhouse;
+
     
     [HideInInspector]public float totalWoodAmount = 0;
     [HideInInspector]public float totalWaterProduction = 0;
@@ -29,6 +34,7 @@ public class TotalOfEverything : MonoBehaviour
     [HideInInspector]public float totalNonRenewableAmount = 0;
     [HideInInspector]public float totalEnergyProduction = 0;
     [HideInInspector]public float totalPopulationAmount = 0;
+    [HideInInspector]public float totalExpeditions = 0;
 
 
     private float timer = 0;
@@ -41,6 +47,8 @@ public class TotalOfEverything : MonoBehaviour
     private int iExp = 0;
     private int happiness = 0;
     private int ecologie = 0;
+    private int plants = 0;
+    private int greenHousings = 0;
 
     public Text woodText;
     public Text waterText;
@@ -48,6 +56,7 @@ public class TotalOfEverything : MonoBehaviour
     public Text nonRenewableText;
     public Text energyText;
     public Text populationText;
+    public Text expeditionText;
 
     
 
@@ -62,6 +71,10 @@ public class TotalOfEverything : MonoBehaviour
         housingBuildings = new List<GameObject>();
         expeditions = new List<GameObject>();
         specialBuildings = new List<GameObject>();
+        planten = new List<GameObject>();
+        greenHousing = new List<GameObject>();
+
+        SetStartResources();
     }
 
     // Update is called once per frame
@@ -78,6 +91,7 @@ public class TotalOfEverything : MonoBehaviour
         nonRenewableText.text = " " + totalNonRenewableAmount;
         energyText.text = " " + totalEnergyProduction;
         populationText.text = " " + totalPopulationAmount;
+        expeditionText.text = " " + totalExpeditions;
     }
 
     void HowManyBuildings()
@@ -138,6 +152,20 @@ public class TotalOfEverything : MonoBehaviour
                 specialBuildings.Add(building);
             }
         }
+        foreach (GameObject building in GameObject.FindGameObjectsWithTag("GreenHousing"))
+        {
+            if(!greenHousing.Contains(building))
+            {
+                greenHousing.Add(building);
+            }
+        }
+        foreach (GameObject building in GameObject.FindGameObjectsWithTag("Planten"))
+        {
+            if(!planten.Contains(building))
+            {
+                planten.Add(building);
+            }
+        }
     }
 
     void UpdateResources()
@@ -185,6 +213,16 @@ public class TotalOfEverything : MonoBehaviour
 
     void Ecologie()
     {
+        ecologie = ((greenHousings * 3) + plants / 10) / (housingBuildings.Count + energyBuildings.Count + foodBuildings.Count + waterBuildings.Count + woodBuildings.Count + nonRenewableBuildings.Count * 2) * 100;
+    }
 
+    void SetStartResources()
+    {
+        totalWoodAmount += 500;
+        totalFoodAmount += 500;
+        totalNonRenewableAmount += 50;
+        totalWaterProduction += 100;
+        totalEnergyProduction += 100;
+        totalPopulationAmount += 592;
     }
 }

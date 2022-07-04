@@ -8775,12 +8775,14 @@ MonoBehaviour:
   totalNonRenewableAmount: 0
   totalEnergyProduction: 0
   totalPopulationAmount: 0
-  woodText: {fileID: 1429417133}
-  waterText: {fileID: 1429417133}
+  totalExpeditions: 0
+  woodText: {fileID: 1305688469}
+  waterText: {fileID: 910305397}
   foodText: {fileID: 1429417133}
   nonRenewableText: {fileID: 493739307}
   energyText: {fileID: 1172782532}
-  populationText: {fileID: 2108941890}
+  populationText: {fileID: 1908094429}
+  expeditionText: {fileID: 0}
 --- !u!114 &1554918050
 MonoBehaviour:
   m_ObjectHideFlags: 0
