@@ -26,6 +26,13 @@ class PopulationProduction : Production
 
     public override void CanProduce()
     {
-        
+        if (totalAmounts.totalPopulationAmount < totalAmounts.totalPopulationCap)
+        {
+            canProduce = true;
+        }
+        else
+        {
+            canProduce = false;
+        }
     }
 }

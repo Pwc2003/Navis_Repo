@@ -35,6 +35,7 @@ public class TotalOfEverything : MonoBehaviour
     [HideInInspector]public float totalEnergyProduction = 0;
     [HideInInspector]public float totalPopulationAmount = 0;
     [HideInInspector]public float totalExpeditions = 0;
+    [HideInInspector]public float totalPopulationCap = 0;
 
 
     private float timer = 0;
@@ -56,7 +57,7 @@ public class TotalOfEverything : MonoBehaviour
     public Text nonRenewableText;
     public Text energyText;
     public Text populationText;
-    public Text expeditionText;
+    public Text populationCapText;
 
     
 
@@ -91,7 +92,7 @@ public class TotalOfEverything : MonoBehaviour
         nonRenewableText.text = " " + totalNonRenewableAmount;
         energyText.text = " " + totalEnergyProduction;
         populationText.text = " " + totalPopulationAmount;
-        expeditionText.text = " " + totalExpeditions;
+        populationCapText.text = "/ " + totalPopulationCap;
     }
 
     void HowManyBuildings()
@@ -224,5 +225,6 @@ public class TotalOfEverything : MonoBehaviour
         totalWaterProduction += 100;
         totalEnergyProduction += 100;
         totalPopulationAmount += 592;
+        totalPopulationCap += 750;
     }
 }
