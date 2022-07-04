@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 131004393}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Food
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1077,7 +1077,7 @@ GameObject:
   - component: {fileID: 172929735}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Happiness
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1152,7 +1152,7 @@ GameObject:
   - component: {fileID: 175536723}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Water
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1745,7 +1745,7 @@ GameObject:
   - component: {fileID: 300413299}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Completed_Expeditions
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2092,68 +2092,55 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.5037
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalPosition.y
       value: 80
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555634790766394, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555634790766394, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 8780555636366937320, guid: f38ab3e13b8f1554799385eca678c811,
-        type: 3}
+    - target: {fileID: 8780555636366937320, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
@@ -2680,7 +2667,7 @@ GameObject:
   - component: {fileID: 458610832}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Ecology
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3736,7 +3723,7 @@ GameObject:
   - component: {fileID: 568754173}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Wood
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5120,8 +5107,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: The Atlantic Expedition brings you to the atlantic. Underwater temples will
-    be found, lost resources will be recovered. <b>High risk, high reward</b>.
+  m_Text: The Atlantic Expedition brings you to the atlantic. Underwater temples
+    will be found, lost resources will be recovered. <b>High risk, high reward</b>.
 --- !u!222 &881807636
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5666,8 +5653,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: The North Sea brings you to the North Sea. Old villages will be found, lost
-    resources will be recovered. <b>Medium risk, Medium reward</b>.
+  m_Text: The North Sea brings you to the North Sea. Old villages will be found,
+    lost resources will be recovered. <b>Medium risk, Medium reward</b>.
 --- !u!222 &954077933
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6831,63 +6818,51 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: -8679921383154817045, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 53b0522b48d60a147a09b8253c8ece64,
-        type: 3}
+    - target: {fileID: 919132149155446097, guid: 53b0522b48d60a147a09b8253c8ece64, type: 3}
       propertyPath: m_Name
       value: the-wall
       objectReference: {fileID: 0}
@@ -8048,7 +8023,7 @@ GameObject:
   - component: {fileID: 1348814398}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Electricity
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9489,8 +9464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e919fd9ebcd654b8f513f9843a9e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flatbuilding1: {fileID: 4541017032432798903, guid: 29800341de4b2d941a50b3453787ad0b,
-    type: 3}
+  Flatbuilding1: {fileID: 4541017032432798903, guid: 29800341de4b2d941a50b3453787ad0b, type: 3}
   Flatbuilding2: {fileID: 0}
   House1: {fileID: 0}
   House2: {fileID: 0}
@@ -10699,7 +10673,7 @@ GameObject:
   - component: {fileID: 1768775581}
   m_Layer: 5
   m_Name: Ico
-  m_TagString: Non_Renewable_Resources
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
