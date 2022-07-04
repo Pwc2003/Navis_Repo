@@ -10,6 +10,7 @@ public class SelectionMenuScript : MonoBehaviour
 
     private GameObject selectedBuilding;
     private GameObject spawnedBuilding;
+    private GameObject buildingSnapPoint;
 
 
     [Header("Living Quarters")]
@@ -44,6 +45,7 @@ public class SelectionMenuScript : MonoBehaviour
     void Start()
     {
         check = GameObject.Find("Check");
+        canvas = GameObject.Find("HUD");
     }
     void Update()
     {
@@ -52,7 +54,9 @@ public class SelectionMenuScript : MonoBehaviour
     public void Destroy()
     {
         FindObject();
+        FindSnapPoint();
         Destroy(selectedBuilding);
+        buildingSnapPoint.GetComponent<Renderer>().material.color = Color.green;
         check.GetComponent<SnapSystem>().buildings.Remove(selectedBuilding);
     }
 
@@ -124,6 +128,19 @@ public class SelectionMenuScript : MonoBehaviour
             if(building.GetComponent<TestForSelection>().selected)
             {
                 selectedBuilding = building;
+            }
+        }
+    }
+
+    private void FindSnapPoint()
+    {
+        foreach(GameObject snapPoint in canvas.GetComponent<GridSystem_Sander>().removedSnapPoints)
+        {
+            Debug.Log("first");
+            if(snapPoint.transform.position == selectedBuilding.transform.position)
+            {
+                Debug.Log("second");
+                buildingSnapPoint = snapPoint;
             }
         }
     }
