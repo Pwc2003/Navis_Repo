@@ -1632,7 +1632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 31.503693
+      value: 31.5037
       objectReference: {fileID: 0}
     - target: {fileID: 8780555634790766393, guid: f38ab3e13b8f1554799385eca678c811, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6024,7 +6024,7 @@ GameObject:
   - component: {fileID: 1172782533}
   - component: {fileID: 1172782532}
   m_Layer: 5
-  m_Name: TextCntr
+  m_Name: ElectricityCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7277,7 +7277,7 @@ GameObject:
   - component: {fileID: 1429417134}
   - component: {fileID: 1429417133}
   m_Layer: 5
-  m_Name: TextCntr
+  m_Name: FoodCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12080,7 +12080,7 @@ GameObject:
   - component: {fileID: 2108941891}
   - component: {fileID: 2108941890}
   m_Layer: 5
-  m_Name: TextCntr
+  m_Name: PopulationCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -12,6 +12,7 @@ public class TotalOfEverything : MonoBehaviour
     private List<GameObject> energyBuildings;
     private List<GameObject> housingBuildings;
     private List<GameObject> expeditions;
+    private List<GameObject> specialBuildings;
     
     private GameObject woodBuilding;
     private GameObject waterBuilding;
@@ -20,6 +21,7 @@ public class TotalOfEverything : MonoBehaviour
     private GameObject energyBuilding;
     private GameObject housingBuilding;
     private GameObject expedition;
+    private GameObject specialBuilding;
     
     [HideInInspector]public float totalWoodAmount = 0;
     [HideInInspector]public float totalWaterProduction = 0;
@@ -37,6 +39,8 @@ public class TotalOfEverything : MonoBehaviour
     private int iNR = 0;
     private int iP = 0;
     private int iExp = 0;
+    private int happiness = 0;
+    private int ecologie = 0;
 
     public Text woodText;
     public Text waterText;
@@ -44,6 +48,8 @@ public class TotalOfEverything : MonoBehaviour
     public Text nonRenewableText;
     public Text energyText;
     public Text populationText;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +61,7 @@ public class TotalOfEverything : MonoBehaviour
         energyBuildings = new List<GameObject>();
         housingBuildings = new List<GameObject>();
         expeditions = new List<GameObject>();
+        specialBuildings = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -65,12 +72,12 @@ public class TotalOfEverything : MonoBehaviour
         HowManyBuildings();
         UpdateResources();
 
-        woodText.text = "wood: " + totalWoodAmount;
-        waterText.text = "water: " + totalWaterProduction;
-        foodText.text = "food: " + totalFoodAmount;
+        woodText.text = " " + totalWoodAmount;
+        waterText.text = " " + totalWaterProduction;
+        foodText.text = " " + totalFoodAmount;
         nonRenewableText.text = " " + totalNonRenewableAmount;
-        energyText.text = "energy: " + totalEnergyProduction;
-        populationText.text = "population: " + totalPopulationAmount;
+        energyText.text = " " + totalEnergyProduction;
+        populationText.text = " " + totalPopulationAmount;
     }
 
     void HowManyBuildings()
@@ -124,6 +131,13 @@ public class TotalOfEverything : MonoBehaviour
                 expeditions.Add(building);
             }
         }
+        foreach (GameObject building in GameObject.FindGameObjectsWithTag("SpecialBuilding"))
+        {
+            if(!specialBuildings.Contains(building))
+            {
+                specialBuildings.Add(building);
+            }
+        }
     }
 
     void UpdateResources()
@@ -162,5 +176,15 @@ public class TotalOfEverything : MonoBehaviour
             }
             timer = 0;
         }
+    }
+
+    void Happiness()
+    {
+        happiness = (specialBuildings.Count * 20) / housingBuildings.Count / (ecologie * -1 / 100) * 100;
+    }
+
+    void Ecologie()
+    {
+
     }
 }

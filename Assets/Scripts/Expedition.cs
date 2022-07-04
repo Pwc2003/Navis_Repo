@@ -104,9 +104,6 @@ class Expedition : Production
 
     public override void Produce()
     {
-        Debug.Log("Testing lol");
-        // /amount += Mathf.Round(1000.0f*(productGain * (Chance_of_Failure*69.0f) / (50.0f*Speed)));
-
         float amountminrec = Mathf.Round((500*ExpeditionRewardMinimum-100*ExpeditionRewardMaximum)/24);
         float amountmaxrec = Mathf.Round(10*ExpeditionRewardMinimum-0.5f*amountminrec);
         amount += Mathf.Round(Speed * amountminrec + Chance_of_Failure * amountmaxrec);
