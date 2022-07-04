@@ -44,13 +44,5 @@ public class GridSystem_Sander : MonoBehaviour
     }
     private void Update()
     {
-        if(GameObject.FindWithTag("SpawnedObject") != null)
-        {
-            check.SetActive(true);
-        }
-        else
-        {
-            check.SetActive(false);
-        }
     }
 }

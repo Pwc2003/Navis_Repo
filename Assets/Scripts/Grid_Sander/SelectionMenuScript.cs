@@ -53,6 +53,7 @@ public class SelectionMenuScript : MonoBehaviour
     {
         FindObject();
         Destroy(selectedBuilding);
+        check.GetComponent<SnapSystem>().buildings.Remove(selectedBuilding);
     }
 
     public void RotateLeft()
@@ -75,6 +76,12 @@ public class SelectionMenuScript : MonoBehaviour
     public void SpawnFlat()
     {
         spawnedBuilding = Instantiate(Flatbuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+    }
+
+    public void SpawnHouse()
+    {
+        spawnedBuilding = Instantiate(House1, new Vector3(0, 0, 0), Quaternion.identity);
         check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
     }
 

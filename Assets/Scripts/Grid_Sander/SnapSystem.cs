@@ -16,8 +16,10 @@ public class SnapSystem : MonoBehaviour
 
     private bool canBuild;
     private bool built = false;
-    private bool checked1;
-    private bool checked2;
+    private bool overSizeZ;
+    private bool overSizeX;
+
+    private bool selectedSomething;
 
     private Vector3 distance;
     private Vector3 range;
@@ -39,15 +41,18 @@ public class SnapSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Check();
         if(snapObject == null)
         {
             built = false;
         }
+        if(!built)
+        {
+            Check();
+        }
         if(Input.GetMouseButtonDown(0))
         {
-            Build();
             Select();
+            Build();
         }
         if(Input.GetMouseButtonDown(0) && built)
         {
@@ -66,7 +71,63 @@ public class SnapSystem : MonoBehaviour
     {
         if(snappedPoint != null && !parent.GetComponent<MouseOnUI>().OnMouseOver())
         {
-            CheckSize();
+            //for multi cell building
+            if(canBuild && overSizeX)
+            {
+                snappedPoint.GetComponent<Renderer>().material.color = Color.red;
+                
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
+                parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51].GetComponent<Renderer>().material.color = Color.red; //Let's us see if it works
+
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
+
+                parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51].GetComponent<Renderer>().material.color = Color.red;
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
+                snapObject.transform.position = snappedPoint.transform.position;
+                buildings.Add(snapObject);
+                snapObject.tag = "PlacedObject";
+                built = true;
+                snapObject = null;
+            }
+            
+            //for multi cell building
+            if(canBuild && overSizeZ)
+            {
+                snappedPoint.GetComponent<Renderer>().material.color = Color.red;
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
+                
+                parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1].GetComponent<Renderer>().material.color = Color.red; //Let's us see if it works
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
+
+                parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1].GetComponent<Renderer>().material.color = Color.red;
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
+
+                snapObject.transform.position = snappedPoint.transform.position;
+                buildings.Add(snapObject);
+                snapObject.tag = "PlacedObject";
+                built = true;
+                snapObject = null;
+            }
+
+            //for single cell building
+            if(!overSizeX && !overSizeZ && canBuild)
+            {
+                snappedPoint.GetComponent<Renderer>().material.color = Color.red;
+                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
+                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
+
+                snapObject.transform.position = snappedPoint.transform.position;
+                buildings.Add(snapObject);
+                snapObject.tag = "PlacedObject";
+                built = true;
+                snapObject = null;
+            }
         }
     }
 
@@ -89,6 +150,7 @@ public class SnapSystem : MonoBehaviour
                 snapObject.transform.position = snapPoint.transform.position;
                 snappedPoint = snapPoint;
                 index = parent.GetComponent<GridSystem_Sander>().snapPoints.IndexOf(snappedPoint);
+                CheckSize();
             }
         }
     }
@@ -112,6 +174,10 @@ public class SnapSystem : MonoBehaviour
             {
                 building.GetComponent<TestForSelection>().selected = true;
             }
+            else
+            {
+                building.GetComponent<TestForSelection>().selected = false;
+            }
             if(building.GetComponent<TestForSelection>().selected)
             {
                 building.GetComponentInChildren<Renderer>().material.color = Color.red;
@@ -132,31 +198,11 @@ public class SnapSystem : MonoBehaviour
             {
                 canBuild = false;
             }
-            //for multi cell building
-            if(canBuild)
-            {
-                snappedPoint.GetComponent<Renderer>().material.color = Color.red;
-                
-                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
-                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
-                parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51].GetComponent<Renderer>().material.color = Color.red; //Let's us see if it works
-
-                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
-                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]);
-
-                parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51].GetComponent<Renderer>().material.color = Color.red;
-                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
-                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
-                snapObject.transform.position = snappedPoint.transform.position;
-                buildings.Add(snapObject);
-                snapObject.tag = "PlacedObject";
-                checked1 = true;
-                built = true;
-            }
+            overSizeX = true;
         }
         else
         {
-            checked1 = true;
+            overSizeX = false;
         }
         if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 > 10f)
         {
@@ -169,36 +215,11 @@ public class SnapSystem : MonoBehaviour
             {
                 canBuild = false;
             }
-            //for multi cell building
-            if(canBuild)
-            {
-                snappedPoint.GetComponent<Renderer>().material.color = Color.red;
-                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(snappedPoint);
-                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(snappedPoint);
-                
-                parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1].GetComponent<Renderer>().material.color = Color.red; //Let's us see if it works
-                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
-                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]);
-
-                parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1].GetComponent<Renderer>().material.color = Color.red;
-                parent.GetComponent<GridSystem_Sander>().removedSnapPoints.Add(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
-                parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]);
-
-                snapObject.transform.position = snappedPoint.transform.position;
-                buildings.Add(snapObject);
-                snapObject.tag = "PlacedObject";
-                checked2 = true;
-                built = true;
-            }
+            overSizeZ = true;
         }
         else
         {
-            checked2 = true;
-        }
-
-        if(checked1 && checked2)
-        {
-            snapObject = null;
+            overSizeZ = false;
         }
     }
 }
