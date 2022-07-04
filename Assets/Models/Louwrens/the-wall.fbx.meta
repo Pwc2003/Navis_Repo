@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0cf12f5b1695d044891b8418d694a6e1
+guid: 53b0522b48d60a147a09b8253c8ece64
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
@@ -8,17 +8,17 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: basic-wall
-    second: {fileID: 2100000, guid: 03f7209059ce09544836b9f5d01957af, type: 2}
+    second: {fileID: 2100000, guid: c21a54cf50ac1fb46a0f5f1d0ddf6442, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: decoration
-    second: {fileID: 2100000, guid: 327b5b7f3f9308b42879a768bb2da341, type: 2}
+    second: {fileID: 2100000, guid: b1dc0726ba2083844b31863771b7147e, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: the-tip
-    second: {fileID: 2100000, guid: 89758b9ed6fa5d2409bcad6ad5f7b068, type: 2}
+    second: {fileID: 2100000, guid: 1cee2feb4b062414daae1fc4bb4a4b00, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

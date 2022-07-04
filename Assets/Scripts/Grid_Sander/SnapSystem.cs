@@ -16,12 +16,13 @@ public class SnapSystem : MonoBehaviour
 
     private bool canBuild;
     private bool built = false;
-    private bool overSizeZ;
-    private bool overSizeX;
+    [HideInInspector] public bool overSizeZ;
+    [HideInInspector] public bool overSizeX;
 
     private bool selectedSomething;
 
     private Vector3 distance;
+    private Vector3 selectDistance;
     private Vector3 range;
     private Vector3 worldPosition;
 
@@ -49,7 +50,7 @@ public class SnapSystem : MonoBehaviour
         {
             Check();
         }
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !parent.GetComponent<MouseOnUI>().OnMouseOver())
         {
             Select();
             Build();
@@ -168,19 +169,16 @@ public class SnapSystem : MonoBehaviour
 
         foreach(GameObject building in buildings)
         {
-            distance = building.transform.position - transform.position;
+            selectDistance = building.transform.position - transform.position;
+            Debug.Log(selectDistance.magnitude);
 
-            if(distance.magnitude < 10f)
+            if(selectDistance.magnitude < 10f)
             {
                 building.GetComponent<TestForSelection>().selected = true;
             }
             else
             {
                 building.GetComponent<TestForSelection>().selected = false;
-            }
-            if(building.GetComponent<TestForSelection>().selected)
-            {
-                building.GetComponentInChildren<Renderer>().material.color = Color.red;
             }
         }
     }
