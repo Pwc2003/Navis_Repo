@@ -21,6 +21,8 @@ TagManager:
   - UI
   - PlacedObject
   - SpecialBuilding
+  - Planten
+  - GreenHousing
   layers:
   - Default
   - TransparentFX
