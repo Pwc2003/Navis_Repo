@@ -23,6 +23,14 @@ TagManager:
   - SpecialBuilding
   - Planten
   - GreenHousing
+  - Happiness
+  - Non_Renewable_Resources
+  - Food
+  - Electricity
+  - Ecology
+  - Wood
+  - Water
+  - Completed_Expeditions
   layers:
   - Default
   - TransparentFX
