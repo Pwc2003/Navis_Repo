@@ -111,6 +111,8 @@ public class HUDMain : MonoBehaviour
 
 
         Debug.Log("ObjectivesTabLocation: " + ObjectivesTabLocation);
+
+        HUDL_EXP.gameObject.transform.localScale = new Vector3(0, 0, 0);
     }
 
     void Update() {

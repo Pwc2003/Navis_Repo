@@ -2302,7 +2302,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &491518487
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5175,6 +5175,7 @@ GameObject:
   - component: {fileID: 1046827339}
   - component: {fileID: 1046827338}
   - component: {fileID: 1046827337}
+  - component: {fileID: 1046827340}
   m_Layer: 5
   m_Name: ButtonT_HUDL1
   m_TagString: Untagged
@@ -5298,6 +5299,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046827335}
   m_CullTransparentMesh: 1
+--- !u!114 &1046827340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046827335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd23ab96216a00449553aa8ec9d8907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopulationCost: 100
+  BuildButton: {fileID: 1046827337}
 --- !u!1 &1075256310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6699,7 +6714,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1344574156
 RectTransform:
   m_ObjectHideFlags: 0
