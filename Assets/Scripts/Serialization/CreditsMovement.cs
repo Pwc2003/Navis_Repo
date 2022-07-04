@@ -11,6 +11,11 @@ public class CreditsMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(0, speed * Time.deltaTime * 10, 0);
+
+        if (Input.GetKeyDown("space"))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     void Start()

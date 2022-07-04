@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Plattegrond_Greybox.unity
     guid: 5c80335efe243774aae5159a593f6758
+  - enabled: 1
+    path: Assets/Scenes/GridScene.unity
+    guid: 9bf307429cabbc741adb7a87d821a5c6
   m_configObjects: {}

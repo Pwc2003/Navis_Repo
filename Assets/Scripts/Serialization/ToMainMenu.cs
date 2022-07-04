@@ -42,6 +42,6 @@ public class ToMainMenu : MonoBehaviour
    {
          currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
          PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-         SceneManager.LoadScene(4);
+         SceneManager.LoadScene("GridScene");
    }
 }
