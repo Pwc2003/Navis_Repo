@@ -12319,7 +12319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnFlat
+        m_MethodName: SpawnHouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
