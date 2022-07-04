@@ -21,6 +21,9 @@ class Expedition : Production
     [Range(0.0f, 1f)] public float Chance_of_Failure;
     public Image progressbarimg;
 
+    public Text ExpeditionCounter;
+    private int ExpeditionTotal;
+
     // EXPEDITION REWARDS!!! DON'T TOUCH PLS I BEG UWU 
     private float ExpeditionRewardMinimum = 750f;
     private float ExpeditionRewardMaximum = 2500f;
@@ -42,6 +45,10 @@ class Expedition : Production
     }
 
     void Update() {
+
+        ExpeditionTotal = int.Parse(ExpeditionCounter.text);
+
+        
         if (Progressing) {
             if (Progressbar.gameObject.transform.localScale.x < 1) {
 
@@ -76,6 +83,8 @@ class Expedition : Production
                 Progressbar.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
                 ExpeditionStatus.text = "Expedition complete";
                 CostPrice.text = "Succesfully completed";
+                ExpeditionTotal +=  1;
+                ExpeditionCounter.text = ExpeditionTotal.ToString();  
                 CancelBtn.gameObject.SetActive(false);
                 Produce();
             }
