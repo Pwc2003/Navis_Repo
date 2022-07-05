@@ -1995,7 +1995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &209494781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2836,7 +2836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &398352801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11723,7 +11723,6 @@ MonoBehaviour:
   ButtonHUD3: {fileID: 1123690076}
   CounterButton: {fileID: 341583600}
   EditNameBtn: {fileID: 979301448}
-  RotatBtn: {fileID: 0}
   Cityname: {fileID: 830529723}
   PlaceholderCityname: {fileID: 416068064}
   CtynameInput: {fileID: 2002444573}
