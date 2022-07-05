@@ -51,6 +51,9 @@ public class SelectionMenuScript : MonoBehaviour
 
     [Header("Roads")]
     public GameObject Road1;
+    public GameObject Road2;
+    public GameObject Road3;
+    public GameObject Road4;
 
 
     void Start()
@@ -292,6 +295,36 @@ public class SelectionMenuScript : MonoBehaviour
         if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
         {
             spawnedBuilding = Instantiate(Road1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
+        }
+    }
+
+        public void SpawnRoad2()
+    {
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(Road2, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
+        }
+    }
+
+        public void SpawnRoad3()
+    {
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(Road3, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
+        }
+    }
+
+        public void SpawnRoad4()
+    {
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(Road4, new Vector3(0, 0, 0), Quaternion.identity);
             check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
             spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
         }
