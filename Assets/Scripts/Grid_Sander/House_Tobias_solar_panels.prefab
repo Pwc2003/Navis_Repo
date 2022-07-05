@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8640672039830099557}
   - component: {fileID: 4631405647344572864}
   - component: {fileID: 7467805649509215498}
-  - component: {fileID: 8098435361723937164}
   - component: {fileID: 2092829506141652683}
+  - component: {fileID: 1549007929681333337}
   m_Layer: 0
   m_Name: House_Tobias_solar_panels
   m_TagString: SpawnedObject
@@ -88,19 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8098435361723937164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8980747050321267935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf886439627eb0b4293b1b36e826648b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selected: 0
 --- !u!114 &2092829506141652683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionRate: 0
+  productionRate: 2
   productGain: 0
   tagName: 
   amount: 0
@@ -135,3 +122,16 @@ MonoBehaviour:
   electricityBuildingCost: 0
   canvas: {fileID: 0}
   produced: 0
+--- !u!114 &1549007929681333337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980747050321267935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d78b156abeca243ae9e7c9182d7d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
