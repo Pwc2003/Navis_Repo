@@ -20,6 +20,7 @@ public class HUDMain : MonoBehaviour
     public Button ButtonHUD1;
     public Button ButtonHUD2;
     public Button ButtonHUD3;
+    public Button ButtonHUD4;
 
     public Button CounterButton;
     public Button EditNameBtn;
@@ -33,6 +34,9 @@ public class HUDMain : MonoBehaviour
     private GameObject Tab1;
     private GameObject Tab1B;
     private GameObject Tab2;
+
+    private GameObject Tab3;
+    private GameObject Tab3B;
 
     public Text Cityname;
     public Text PlaceholderCityname;
@@ -60,6 +64,8 @@ public class HUDMain : MonoBehaviour
         Tab1 = GameObject.Find("TabHUDL1");
         Tab1B = GameObject.Find("TabHUDL1_P2");
         Tab2 = GameObject.Find("TabHUDL2");
+        Tab3 = GameObject.Find("TabHUDL3");
+        Tab3B = GameObject.Find("TabHUDL3_P2");
         HUDR_U = GameObject.Find("UitklapdingR");
         HUDL_EXP = GameObject.Find("UitklapdingExpeditions");
         HUDR_ROT = GameObject.Find("UitklapdingRotate");
@@ -82,6 +88,7 @@ public class HUDMain : MonoBehaviour
         ButtonHUD1.onClick.AddListener(ButtonHUD1_Click);
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
         ButtonHUD3.onClick.AddListener(ButtonHUD3_Click);
+        ButtonHUD4.onClick.AddListener(ButtonHUD4_Click);
         CounterButton.onClick.AddListener(CounterButton_Click);
         MinimiseBtn.onClick.AddListener(MinimiseBtn_Click);
         ResetLocationsBtn.onClick.AddListener(ResetLocationsBtn_Click);
@@ -94,6 +101,8 @@ public class HUDMain : MonoBehaviour
         Tab1.SetActive(false);
         Tab1B.SetActive(false);
         Tab2.SetActive(false);
+        Tab3.SetActive(false);
+        Tab3B.SetActive(false);
 
         Cityname.text = "Navis City";
 
@@ -147,6 +156,8 @@ public class HUDMain : MonoBehaviour
         Tab1.SetActive(true);
         Tab1B.SetActive(false);
         Tab2.SetActive(false);
+        Tab3.SetActive(false);
+        Tab3B.SetActive(false);
     }
 
     void ButtonHUD2_Click()
@@ -156,6 +167,19 @@ public class HUDMain : MonoBehaviour
         Tab1.SetActive(false);
         Tab2.SetActive(true);
         Tab1B.SetActive(false);
+        Tab3.SetActive(false);
+        Tab3B.SetActive(false);
+    }
+
+    void ButtonHUD4_Click()
+    {
+        HUDL_U.SetActive(!HUDL_U.activeSelf);
+
+        Tab1.SetActive(false);
+        Tab2.SetActive(false);
+        Tab1B.SetActive(false);
+        Tab3.SetActive(true);
+        Tab3B.SetActive(false);
     }
 
     void CounterButton_Click()
