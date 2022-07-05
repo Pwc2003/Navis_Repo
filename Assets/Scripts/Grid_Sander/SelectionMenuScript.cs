@@ -37,9 +37,9 @@ public class SelectionMenuScript : MonoBehaviour
     public GameObject shop2;
 
     [Header("Production Buildings")]
-    public GameObject productionBuilding1;
-    public GameObject productionBuilding2;
-    public GameObject productionBuilding3;
+    public GameObject woodProductionBuilding1;
+    public GameObject waterProductionBuilding1;
+    public GameObject electricityProductionBuilding1;
     public GameObject productionBuilding4;
 
 
