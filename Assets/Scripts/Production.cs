@@ -10,6 +10,7 @@ abstract class Production : MonoBehaviour
     [SerializeField] protected float productionRate = 0;
     [SerializeField] protected float productGain = 0;
 
+    //Je moeder zuigt dick
     [HideInInspector] public string tagName;
 
     [HideInInspector]public float amount;
