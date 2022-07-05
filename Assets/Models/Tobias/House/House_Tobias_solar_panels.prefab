@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8493056083272172445}
   - component: {fileID: 5924928188025698135}
   - component: {fileID: -6302277600839990478}
-  - component: {fileID: 5342834317351651415}
+  - component: {fileID: 206619434200303712}
   m_Layer: 0
   m_Name: House_Tobias_solar_panels
   m_TagString: HousingBuilding
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
---- !u!114 &5342834317351651415
+--- !u!114 &206619434200303712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productionRate: 1
   productGain: 0
+  capIncrease: 20
   tagName: 
   amount: 0
   foodCostAmount: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   energyCostAmount: 0
   happiness: 0
   ecologie: 0
+  populationCapAmount: 0
   woodProductionCost: 0
   foodProductionCost: 0
   nonRenewableProductionCost: 0
@@ -132,9 +134,9 @@ MonoBehaviour:
   waterUsageCost: 2
   foodUsageCost: 0
   populationUsageCost: 0
-  woodBuildingCost: 18
-  foodBuildingCost: 6
-  nonRenewableBuildingCost: 8
+  woodBuildingCost: 21
+  foodBuildingCost: 7
+  nonRenewableBuildingCost: 14
   populationBuildingCost: 0
   waterBuildingCost: 0
   electricityBuildingCost: 0
