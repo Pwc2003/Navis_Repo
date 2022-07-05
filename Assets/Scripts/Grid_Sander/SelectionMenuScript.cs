@@ -58,10 +58,15 @@ public class SelectionMenuScript : MonoBehaviour
     {
         FindObject();
         FindSnapPoint();
+        buildingSnapPoint.GetComponent<Renderer>().material.color = Color.gray;
+        buildingSnapPoint.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
         Destroy(selectedBuilding);
-        buildingSnapPoint.GetComponent<Renderer>().material.color = Color.green;
+        Debug.Log("Before " + canvas.GetComponent<GridSystem_Sander>().removedSnapPoints.Count);
+        Debug.Log("Before " + canvas.GetComponent<GridSystem_Sander>().availableSnapPoints.Count);
         canvas.GetComponent<GridSystem_Sander>().removedSnapPoints.Remove(buildingSnapPoint);
         canvas.GetComponent<GridSystem_Sander>().availableSnapPoints.Add(buildingSnapPoint);
+        Debug.Log("After " + canvas.GetComponent<GridSystem_Sander>().removedSnapPoints.Count);
+        Debug.Log("After " + canvas.GetComponent<GridSystem_Sander>().availableSnapPoints.Count);
         check.GetComponent<SnapSystem>().buildings.Remove(selectedBuilding);
     }
 
@@ -148,7 +153,6 @@ public class SelectionMenuScript : MonoBehaviour
             spawnedBuilding = Instantiate(productionBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
             check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
         }
-        
     }
 
     
@@ -168,10 +172,8 @@ public class SelectionMenuScript : MonoBehaviour
     {
         foreach(GameObject snapPoint in canvas.GetComponent<GridSystem_Sander>().removedSnapPoints)
         {
-            Debug.Log("first");
             if(snapPoint.transform.position == selectedBuilding.transform.position)
             {
-                Debug.Log("second");
                 buildingSnapPoint = snapPoint;
             }
         }

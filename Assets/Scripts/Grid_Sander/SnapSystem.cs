@@ -45,6 +45,11 @@ public class SnapSystem : MonoBehaviour
         if(snapObject == null)
         {
             built = false;
+            parent.transform.GetChild(0).GetChild(6).transform.localScale = new Vector3(0, 0, 0);
+        }
+        if(snapObject != null)
+        {
+            parent.transform.GetChild(0).GetChild(6).transform.localScale = new Vector3(1, 1, 1);
         }
         if(!built)
         {
