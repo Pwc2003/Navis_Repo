@@ -309,10 +309,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productionRate: 1
   productGain: 0
+  capIncrease: 70
   tagName: 
   amount: 0
+  foodCostAmount: 0
+  woodCostAmount: 0
+  nonrenewableCostAmount: 0
+  waterCostAmount: 0
+  energyCostAmount: 0
   happiness: 0
   ecologie: 0
+  populationCapAmount: 0
   woodProductionCost: 0
   foodProductionCost: 0
   nonRenewableProductionCost: 0

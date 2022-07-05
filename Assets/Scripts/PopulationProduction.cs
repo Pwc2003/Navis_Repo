@@ -14,7 +14,7 @@ class PopulationProduction : Production
 
     public override void Produce()
     {
-        if(timer >= 1f)
+        if(timer >= 10f)
         {
             if(canProduce)
             {
@@ -40,10 +40,11 @@ class PopulationProduction : Production
 
     public void RetractCosts()
     {
-            woodCostAmount += woodBuildingCost;
-            foodCostAmount += foodBuildingCost;
-            nonrenewableCostAmount += nonRenewableBuildingCost;
-            waterCostAmount += waterBuildingCost;
-            energyCostAmount += electricityBuildingCost;
+        woodCostAmount += woodBuildingCost;
+        foodCostAmount += foodBuildingCost;
+        nonrenewableCostAmount += nonRenewableBuildingCost;
+        waterCostAmount += waterBuildingCost;
+        energyCostAmount += electricityBuildingCost;
+        populationCapAmount += capIncrease;
     }
 }
