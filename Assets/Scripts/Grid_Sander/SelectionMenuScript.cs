@@ -125,7 +125,7 @@ public class SelectionMenuScript : MonoBehaviour
     {
         foreach(GameObject building in check.GetComponent<SnapSystem>().buildings)
         {
-            if(building.GetComponent<TestForSelection>().selected)
+            if(building.GetComponent<Selected>().selected)
             {
                 selectedBuilding = building;
             }

@@ -89,7 +89,6 @@ public class SnapSystem : MonoBehaviour
                 parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Remove(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]);
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
-                snapObject.tag = "PlacedObject";
                 built = true;
                 snapObject = null;
             }
@@ -111,7 +110,6 @@ public class SnapSystem : MonoBehaviour
 
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
-                snapObject.tag = "PlacedObject";
                 built = true;
                 snapObject = null;
             }
@@ -125,7 +123,6 @@ public class SnapSystem : MonoBehaviour
 
                 snapObject.transform.position = snappedPoint.transform.position;
                 buildings.Add(snapObject);
-                snapObject.tag = "PlacedObject";
                 built = true;
                 snapObject = null;
             }
@@ -145,7 +142,6 @@ public class SnapSystem : MonoBehaviour
         foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().availableSnapPoints)
         {
             distance = snapPoint.transform.position - transform.position;
-
             if(distance.magnitude < 10f)
             {
                 snapObject.transform.position = snapPoint.transform.position;
@@ -174,11 +170,11 @@ public class SnapSystem : MonoBehaviour
 
             if(selectDistance.magnitude < 10f)
             {
-                building.GetComponent<TestForSelection>().selected = true;
+                building.GetComponent<Selected>().selected = true;
             }
             else
             {
-                building.GetComponent<TestForSelection>().selected = false;
+                building.GetComponent<Selected>().selected = false;
             }
         }
     }

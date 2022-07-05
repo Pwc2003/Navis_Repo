@@ -10,6 +10,8 @@ abstract class Production : MonoBehaviour
     [SerializeField] protected float productionRate = 0;
     [SerializeField] protected float productGain = 0;
 
+    [HideInInspector] public string tagName;
+
     [HideInInspector]public float amount;
     [HideInInspector]public float happiness;
     [HideInInspector]public float ecologie;
@@ -36,6 +38,7 @@ abstract class Production : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canvas = GameObject.Find("HUD");
         totalAmounts = canvas.GetComponent<TotalOfEverything>();
     }
 

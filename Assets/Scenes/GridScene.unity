@@ -8142,6 +8142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productionRate: 0
   productGain: 50
+  tagName: 
   amount: 0
   happiness: 0
   ecologie: 0
@@ -9464,7 +9465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16e919fd9ebcd654b8f513f9843a9e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flatbuilding1: {fileID: 4541017032432798903, guid: 29800341de4b2d941a50b3453787ad0b, type: 3}
+  Flatbuilding1: {fileID: 2998242312571064301, guid: 1c538f09a3d7c1149a20825ce73098cd, type: 3}
   Flatbuilding2: {fileID: 0}
   House1: {fileID: 0}
   House2: {fileID: 0}
@@ -9927,6 +9928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productionRate: 100
   productGain: 50
+  tagName: 
   amount: 0
   happiness: 0
   ecologie: 0
@@ -10085,6 +10087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   productionRate: 0
   productGain: 50
+  tagName: 
   amount: 0
   happiness: 0
   ecologie: 0

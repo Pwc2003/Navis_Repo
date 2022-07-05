@@ -9,9 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2508564176791164247}
+  - component: {fileID: 4517725112657662492}
+  - component: {fileID: 5836182133141639821}
   m_Layer: 0
   m_Name: apartementen-complex
-  m_TagString: Untagged
+  m_TagString: HousingBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,6 +35,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4517725112657662492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998242312571064301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d78b156abeca243ae9e7c9182d7d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+--- !u!114 &5836182133141639821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2998242312571064301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionRate: 0
+  productGain: 0
+  tagName: 
+  amount: 0
+  happiness: 0
+  ecologie: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  canvas: {fileID: 0}
+  produced: 0
 --- !u!1 &3375147902599364824
 GameObject:
   m_ObjectHideFlags: 0
