@@ -59,6 +59,8 @@ public class SelectionMenuScript : MonoBehaviour
         FindSnapPoint();
         Destroy(selectedBuilding);
         buildingSnapPoint.GetComponent<Renderer>().material.color = Color.green;
+        canvas.GetComponent<GridSystem_Sander>().removedSnapPoints.Remove(buildingSnapPoint);
+        canvas.GetComponent<GridSystem_Sander>().availableSnapPoints.Add(buildingSnapPoint);
         check.GetComponent<SnapSystem>().buildings.Remove(selectedBuilding);
     }
 

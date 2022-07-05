@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4788098360695819320}
   - component: {fileID: 8493056083272172445}
   - component: {fileID: 5924928188025698135}
+  - component: {fileID: -6302277600839990478}
+  - component: {fileID: 5342834317351651415}
   m_Layer: 0
   m_Name: House_Tobias_solar_panels
-  m_TagString: Untagged
+  m_TagString: HousingBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,3 +88,44 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-6302277600839990478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276370190703515266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d78b156abeca243ae9e7c9182d7d85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selected: 0
+--- !u!114 &5342834317351651415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5276370190703515266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionRate: 0
+  productGain: 0
+  tagName: 
+  amount: 0
+  happiness: 0
+  ecologie: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  canvas: {fileID: 0}
+  produced: 0

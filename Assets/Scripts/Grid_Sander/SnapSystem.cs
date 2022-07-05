@@ -166,7 +166,6 @@ public class SnapSystem : MonoBehaviour
         foreach(GameObject building in buildings)
         {
             selectDistance = building.transform.position - transform.position;
-            Debug.Log(selectDistance.magnitude);
 
             if(selectDistance.magnitude < 10f)
             {
@@ -197,6 +196,7 @@ public class SnapSystem : MonoBehaviour
         else
         {
             overSizeX = false;
+            canBuild = true;
         }
         if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 > 10f)
         {
@@ -214,6 +214,7 @@ public class SnapSystem : MonoBehaviour
         else
         {
             overSizeZ = false;
+            canBuild = true;
         }
     }
 }
