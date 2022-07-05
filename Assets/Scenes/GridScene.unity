@@ -381,7 +381,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnHouse
+        m_MethodName: SpawnSchool
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4172,8 +4172,8 @@ MonoBehaviour:
   socialBuilding2: {fileID: 0}
   socialBuilding3: {fileID: 0}
   socialBuilding4: {fileID: 0}
-  Hospital1: {fileID: 0}
-  Shop1: {fileID: 0}
+  hospital1: {fileID: 0}
+  shop1: {fileID: 0}
   shop2: {fileID: 0}
   productionBuilding1: {fileID: 0}
   productionBuilding2: {fileID: 0}
@@ -7850,8 +7850,8 @@ MonoBehaviour:
   socialBuilding2: {fileID: 0}
   socialBuilding3: {fileID: 0}
   socialBuilding4: {fileID: 0}
-  Hospital1: {fileID: 0}
-  Shop1: {fileID: 0}
+  hospital1: {fileID: 0}
+  shop1: {fileID: 0}
   shop2: {fileID: 0}
   productionBuilding1: {fileID: 0}
   productionBuilding2: {fileID: 0}
@@ -8597,7 +8597,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnHouse
+        m_MethodName: SpawnHouse2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11806,7 +11806,7 @@ MonoBehaviour:
   Flatbuilding1: {fileID: 9205000424924645586, guid: 1c538f09a3d7c1149a20825ce73098cd, type: 3}
   Flatbuilding2: {fileID: 0}
   House1: {fileID: 8980747050321267935, guid: 59130152c20e00145bdbd262a0bd50ca, type: 3}
-  House2: {fileID: 0}
+  House2: {fileID: 7395524033018603334, guid: 0f442f069566055498512a519854dfc5, type: 3}
   House3: {fileID: 0}
   school1: {fileID: 0}
   school2: {fileID: 0}
@@ -11814,8 +11814,8 @@ MonoBehaviour:
   socialBuilding2: {fileID: 0}
   socialBuilding3: {fileID: 0}
   socialBuilding4: {fileID: 0}
-  Hospital1: {fileID: 0}
-  Shop1: {fileID: 0}
+  hospital1: {fileID: 0}
+  shop1: {fileID: 0}
   shop2: {fileID: 0}
   productionBuilding1: {fileID: 0}
   productionBuilding2: {fileID: 0}
@@ -13715,8 +13715,8 @@ MonoBehaviour:
   socialBuilding2: {fileID: 0}
   socialBuilding3: {fileID: 0}
   socialBuilding4: {fileID: 0}
-  Hospital1: {fileID: 0}
-  Shop1: {fileID: 0}
+  hospital1: {fileID: 0}
+  shop1: {fileID: 0}
   shop2: {fileID: 0}
   productionBuilding1: {fileID: 0}
   productionBuilding2: {fileID: 0}
