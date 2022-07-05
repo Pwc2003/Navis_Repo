@@ -36,6 +36,11 @@ public class TotalOfEverything : MonoBehaviour
     [HideInInspector]public float totalPopulationAmount = 0;
     [HideInInspector]public float totalExpeditions = 0;
     [HideInInspector]public float totalPopulationCap = 0;
+    [HideInInspector]public float woodBuildingCost = 0;
+    [HideInInspector]public float waterBuildingCost = 0;
+    [HideInInspector]public float foodBuildingCost = 0;
+    [HideInInspector]public float nonRenewableBuildingCost = 0;
+    [HideInInspector]public float electricityBuildingCost = 0;
 
 
     private float timer = 0;

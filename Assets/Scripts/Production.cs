@@ -27,12 +27,12 @@ abstract class Production : MonoBehaviour
     [SerializeField] protected float foodUsageCost = 0;
     [SerializeField] protected float populationUsageCost = 0;
     [Header("Resources it costs to build a building")]
-    [SerializeField] public float woodBuildingCost = 0;
-    [SerializeField] public float foodBuildingCost = 0;
-    [SerializeField] public float nonRenewableBuildingCost = 0;
-    [SerializeField] public float populationBuildingCost = 0;
-    [SerializeField] public float waterBuildingCost = 0;
-    [SerializeField] public float electricityBuildingCost = 0;
+    [SerializeField] protected float woodBuildingCost = 0;
+    [SerializeField] protected float foodBuildingCost = 0;
+    [SerializeField] protected float nonRenewableBuildingCost = 0;
+    [SerializeField] protected float populationBuildingCost = 0;
+    [SerializeField] protected float waterBuildingCost = 0;
+    [SerializeField] protected float electricityBuildingCost = 0;
 
     public GameObject canvas;
     protected TotalOfEverything totalAmounts;
