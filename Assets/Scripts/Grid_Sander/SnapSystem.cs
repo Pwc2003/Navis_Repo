@@ -142,7 +142,7 @@ public class SnapSystem : MonoBehaviour
         foreach(GameObject snapPoint in parent.GetComponent<GridSystem_Sander>().availableSnapPoints)
         {
             distance = snapPoint.transform.position - transform.position;
-            if(distance.magnitude < 10f)
+            if(distance.magnitude < 10f && snapObject != null)
             {
                 snapObject.transform.position = snapPoint.transform.position;
                 snappedPoint = snapPoint;
