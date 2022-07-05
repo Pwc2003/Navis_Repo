@@ -13,8 +13,14 @@ abstract class Production : MonoBehaviour
     [HideInInspector] public string tagName;
 
     [HideInInspector]public float amount;
+    [HideInInspector]public float foodCostAmount;
+    [HideInInspector]public float woodCostAmount;
+    [HideInInspector]public float nonrenewableCostAmount;
+    [HideInInspector]public float waterCostAmount;
+    [HideInInspector]public float energyCostAmount;
     [HideInInspector]public float happiness;
     [HideInInspector]public float ecologie;
+
     //resources that it costs to produce 1 item
     [Header("Resources it costs per time it produces")]
     [SerializeField] protected float woodProductionCost = 0;

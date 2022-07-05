@@ -24,4 +24,13 @@ class ElectricityProduction : Production
     {
         
     }
+    
+    public void RetractCosts()
+    {
+            woodCostAmount += woodBuildingCost;
+            foodCostAmount += foodBuildingCost;
+            nonrenewableCostAmount += nonRenewableBuildingCost;
+            waterCostAmount += waterBuildingCost;
+            energyCostAmount += electricityBuildingCost;
+    }
 }
