@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4631405647344572864}
   - component: {fileID: 7467805649509215498}
   - component: {fileID: 8098435361723937164}
+  - component: {fileID: 2092829506141652683}
   m_Layer: 0
   m_Name: House_Tobias_solar_panels
   m_TagString: SpawnedObject
@@ -100,3 +101,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+--- !u!114 &2092829506141652683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8980747050321267935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionRate: 0
+  productGain: 0
+  tagName: 
+  amount: 0
+  happiness: 0
+  ecologie: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  woodBuildingCost: 0
+  foodBuildingCost: 0
+  nonRenewableBuildingCost: 0
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
+  canvas: {fileID: 0}
+  produced: 0

@@ -8154,6 +8154,12 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
+  woodBuildingCost: 0
+  foodBuildingCost: 0
+  nonRenewableBuildingCost: 0
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
   canvas: {fileID: 0}
   produced: 0
   BuyBtn: {fileID: 593648940}
@@ -9417,6 +9423,11 @@ MonoBehaviour:
   totalPopulationAmount: 0
   totalExpeditions: 0
   totalPopulationCap: 0
+  woodBuildingCost: 0
+  waterBuildingCost: 0
+  foodBuildingCost: 0
+  nonRenewableBuildingCost: 0
+  electricityBuildingCost: 0
   woodText: {fileID: 1305688469}
   waterText: {fileID: 910305397}
   foodText: {fileID: 1429417133}
@@ -9467,7 +9478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flatbuilding1: {fileID: 2998242312571064301, guid: 1c538f09a3d7c1149a20825ce73098cd, type: 3}
   Flatbuilding2: {fileID: 0}
-  House1: {fileID: 0}
+  House1: {fileID: 8980747050321267935, guid: 59130152c20e00145bdbd262a0bd50ca, type: 3}
   House2: {fileID: 0}
   House3: {fileID: 0}
   school1: {fileID: 0}
@@ -9940,6 +9951,12 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
+  woodBuildingCost: 0
+  foodBuildingCost: 0
+  nonRenewableBuildingCost: 0
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
   canvas: {fileID: 0}
   produced: 0
   BuyBtn: {fileID: 81016010}
@@ -10099,6 +10116,12 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
+  woodBuildingCost: 0
+  foodBuildingCost: 0
+  nonRenewableBuildingCost: 0
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
   canvas: {fileID: 0}
   produced: 0
   BuyBtn: {fileID: 682396566}
@@ -13988,7 +14011,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnFlat
+        m_MethodName: SpawnHouse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
