@@ -23,6 +23,7 @@ TagManager:
   - SpecialBuilding
   - Planten
   - GreenHousing
+  - Canvas
   layers:
   - Default
   - TransparentFX

@@ -22,5 +22,6 @@ class ElectricityProduction : Production
 
     public override void CanProduce()
     {
+        
     }
 }

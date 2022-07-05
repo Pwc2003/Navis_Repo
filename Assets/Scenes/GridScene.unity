@@ -8154,7 +8154,7 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
-  canvas: {fileID: 1554918043}
+  canvas: {fileID: 0}
   produced: 0
   BuyBtn: {fileID: 593648940}
   CancelBtn: {fileID: 272688580}
@@ -9289,7 +9289,7 @@ GameObject:
   - component: {fileID: 1554918052}
   m_Layer: 5
   m_Name: HUD
-  m_TagString: Untagged
+  m_TagString: Canvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9940,7 +9940,7 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
-  canvas: {fileID: 1554918043}
+  canvas: {fileID: 0}
   produced: 0
   BuyBtn: {fileID: 81016010}
   CancelBtn: {fileID: 1187535816}
@@ -10099,7 +10099,7 @@ MonoBehaviour:
   waterUsageCost: 0
   foodUsageCost: 0
   populationUsageCost: 0
-  canvas: {fileID: 1554918043}
+  canvas: {fileID: 0}
   produced: 0
   BuyBtn: {fileID: 682396566}
   CancelBtn: {fileID: 1005264877}

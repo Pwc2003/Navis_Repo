@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SelectionMenuScript : MonoBehaviour
 {
+    protected TotalOfEverything totalAmounts;
     private GameObject canvas;
 
     private GameObject check;
@@ -46,6 +47,7 @@ public class SelectionMenuScript : MonoBehaviour
     {
         check = GameObject.Find("Check");
         canvas = GameObject.Find("HUD");
+        totalAmounts = canvas.GetComponent<TotalOfEverything>();
     }
     void Update()
     {
@@ -79,44 +81,106 @@ public class SelectionMenuScript : MonoBehaviour
 
     public void SpawnFlat()
     {
-        spawnedBuilding = Instantiate(Flatbuilding1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(Flatbuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
     }
 
     public void SpawnHouse()
     {
-        spawnedBuilding = Instantiate(House1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(House1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
+        
     }
 
     public void SpawnSchool()
     {
-        spawnedBuilding = Instantiate(school1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(school1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
+        
     }
 
     public void SpawnSocialBuilding()
     {
-        spawnedBuilding = Instantiate(socialBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(socialBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
+        
     }
 
     public void SpawnHospital()
     {
-        spawnedBuilding = Instantiate(Hospital1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(Hospital1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
+        
     }
 
     public void SpawnShop()
     {
-        spawnedBuilding = Instantiate(Shop1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(Shop1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
+        
     }
 
     public void SpawnProductionBuilding()
     {
-        spawnedBuilding = Instantiate(productionBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
-        check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(productionBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            totalAmounts.totalNonRenewableAmount -= totalAmounts.nonRenewableBuildingCost;
+            totalAmounts.totalWoodAmount -= totalAmounts.woodBuildingCost;
+            totalAmounts.totalEnergyProduction -= totalAmounts.electricityBuildingCost;
+            totalAmounts.totalWaterProduction -= totalAmounts.waterBuildingCost;
+            totalAmounts.totalFoodAmount -= totalAmounts.foodBuildingCost;
+        }
+        
     }
 
     

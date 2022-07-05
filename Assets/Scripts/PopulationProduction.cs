@@ -20,6 +20,8 @@ class PopulationProduction : Production
             {
                 amount += productionRate;
             }
+            totalAmounts.totalWaterProduction -= waterUsageCost;
+            totalAmounts.totalEnergyProduction -= electricityUsageCost;
             timer = 0;
         }
     }
