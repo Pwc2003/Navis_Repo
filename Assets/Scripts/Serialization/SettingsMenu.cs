@@ -90,6 +90,6 @@ public class SettingsMenu : MonoBehaviour
     public void ApplySettings() {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         PlayerPrefs.SetInt("SavedScene", currentSceneIndex);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }
