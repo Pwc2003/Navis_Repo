@@ -23,7 +23,6 @@ public class HUDMain : MonoBehaviour
 
     public Button CounterButton;
     public Button EditNameBtn;
-    public Button RotatBtn;
     private Button MinimiseBtn;
     private Button ResetLocationsBtn;
     private Button LayoutStnsMnBtn;
@@ -82,7 +81,6 @@ public class HUDMain : MonoBehaviour
         ButtonHUD2.onClick.AddListener(ButtonHUD2_Click);
         ButtonHUD3.onClick.AddListener(ButtonHUD3_Click);
         CounterButton.onClick.AddListener(CounterButton_Click);
-        RotatBtn.onClick.AddListener(RotatBtn_Click);
         MinimiseBtn.onClick.AddListener(MinimiseBtn_Click);
         ResetLocationsBtn.onClick.AddListener(ResetLocationsBtn_Click);
         LayoutStnsMnBtn.onClick.AddListener(LayoutStnsMnBtn_Click);
@@ -173,13 +171,13 @@ public class HUDMain : MonoBehaviour
         } 
     }
 
-    void RotatBtn_Click() {
-        if (HUDR_ROT.gameObject.transform.localScale.x == 1) {
-            HUDR_ROT.gameObject.transform.localScale = new Vector3(0, 0, 0);
-        } else {
-            HUDR_ROT.gameObject.transform.localScale = new Vector3(1, 1, 1);
-        }
-    }
+    //void RotatBtn_Click() {
+    //    if (HUDR_ROT.gameObject.transform.localScale.x == 1) {
+    //        HUDR_ROT.gameObject.transform.localScale = new Vector3(0, 0, 0);
+    //    } else {
+    //        HUDR_ROT.gameObject.transform.localScale = new Vector3(1, 1, 1);
+    //    }
+    //}
 
     void LayoutStnsMnBtn_Click() {
         if (HUDM_LAY.gameObject.transform.localScale.x == 1) {
