@@ -20,8 +20,6 @@ class PopulationProduction : Production
             {
                 amount += productionRate;
             }
-            totalAmounts.totalWaterProduction -= waterUsageCost;
-            totalAmounts.totalEnergyProduction -= electricityUsageCost;
             timer = 0;
         }
     }
@@ -38,5 +36,14 @@ class PopulationProduction : Production
             canProduce = false;
             totalAmounts.totalPopulationAmount = totalAmounts.totalPopulationCap;
         }
+    }
+
+    public void RetractCosts()
+    {
+            woodCostAmount += woodBuildingCost;
+            foodCostAmount += foodBuildingCost;
+            nonrenewableCostAmount += nonRenewableBuildingCost;
+            waterCostAmount += waterBuildingCost;
+            energyCostAmount += electricityBuildingCost;
     }
 }

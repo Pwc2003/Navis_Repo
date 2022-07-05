@@ -121,4 +121,13 @@ class Expedition : Production
         Debug.Log("Amountmaxrec: " + amountmaxrec);
         Debug.Log("Amount: " + amount);
     }
+
+    public void RetractCosts()
+    {
+            woodCostAmount += woodBuildingCost;
+            foodCostAmount += foodBuildingCost;
+            nonrenewableCostAmount += nonRenewableBuildingCost;
+            waterCostAmount += waterBuildingCost;
+            energyCostAmount += electricityBuildingCost;
+    }
 }

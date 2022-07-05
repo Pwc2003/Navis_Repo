@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionRate: 0
+  productionRate: 1
   productGain: 0
   tagName: 
   amount: 0
@@ -317,13 +317,13 @@ MonoBehaviour:
   foodProductionCost: 0
   nonRenewableProductionCost: 0
   populationProductionCost: 0
-  electricityUsageCost: 0
-  waterUsageCost: 0
+  electricityUsageCost: 14
+  waterUsageCost: 7
   foodUsageCost: 0
   populationUsageCost: 0
-  woodBuildingCost: 0
-  foodBuildingCost: 0
-  nonRenewableBuildingCost: 0
+  woodBuildingCost: 63
+  foodBuildingCost: 21
+  nonRenewableBuildingCost: 28
   populationBuildingCost: 0
   waterBuildingCost: 0
   electricityBuildingCost: 0

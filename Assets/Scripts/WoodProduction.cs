@@ -36,4 +36,13 @@ class WoodProduction : Production
             canProduce = false;
         }
     }
+
+    public void RetractCosts()
+    {
+            woodCostAmount += woodBuildingCost;
+            foodCostAmount += foodBuildingCost;
+            nonrenewableCostAmount += nonRenewableBuildingCost;
+            waterCostAmount += waterBuildingCost;
+            energyCostAmount += electricityBuildingCost;
+    }
 }
