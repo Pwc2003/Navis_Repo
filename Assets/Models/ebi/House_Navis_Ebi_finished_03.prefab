@@ -4626,9 +4626,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6260873150622623817}
+  - component: {fileID: 8853588733432534412}
   m_Layer: 0
   m_Name: House_Navis_Ebi_finished_03
-  m_TagString: Untagged
+  m_TagString: HousingBuilding
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4716,6 +4717,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8853588733432534412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6748862130995606259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionRate: 1
+  productGain: 0
+  capIncrease: 20
+  tagName: 
+  amount: 0
+  foodCostAmount: 0
+  woodCostAmount: 0
+  nonrenewableCostAmount: 0
+  waterCostAmount: 0
+  energyCostAmount: 0
+  happiness: 0
+  ecologie: 0
+  populationCapAmount: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 4
+  waterUsageCost: 2
+  foodUsageCost: 0
+  populationUsageCost: 0
+  woodBuildingCost: 30
+  foodBuildingCost: 10
+  nonRenewableBuildingCost: 20
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
+  canvas: {fileID: 0}
+  produced: 0
 --- !u!1 &6921659834175598743
 GameObject:
   m_ObjectHideFlags: 0

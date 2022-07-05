@@ -22363,7 +22363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flatbuilding1: {fileID: 9205000424924645586, guid: 1c538f09a3d7c1149a20825ce73098cd, type: 3}
   Flatbuilding2: {fileID: 0}
-  House1: {fileID: 8980747050321267935, guid: 59130152c20e00145bdbd262a0bd50ca, type: 3}
+  House1: {fileID: 5276370190703515266, guid: 76520c81e09dfd74a8646f209406d33b, type: 3}
   House2: {fileID: 1692505187913586950, guid: 58704676cf5abb24087b7869d9343183, type: 3}
   House3: {fileID: 6748862130995606259, guid: 0439f98702f782142ab6f0f724a5177f, type: 3}
   school1: {fileID: 8409083360466353106, guid: ae3f584d154ce9d478e753f72c6022d2, type: 3}
