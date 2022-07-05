@@ -55,11 +55,6 @@ public class TotalOfEverything : MonoBehaviour
     private int ecologie = 0;
     private int plants = 0;
     private int greenHousings = 0;
-    private int iWoC = 0;
-    private int iWaC = 0;
-    private int iFC = 0;
-    private int iEC = 0;
-    private int iNRC = 0;
 
     public Text woodText;
     public Text waterText;
@@ -68,6 +63,7 @@ public class TotalOfEverything : MonoBehaviour
     public Text energyText;
     public Text populationText;
     public Text populationCapText;
+    public Text ecologieText;
 
     
 
@@ -103,6 +99,7 @@ public class TotalOfEverything : MonoBehaviour
         energyText.text = " " + totalEnergyProduction;
         populationText.text = " " + totalPopulationAmount;
         populationCapText.text = "/ " + totalPopulationCap;
+
     }
 
     void HowManyBuildings()
@@ -187,31 +184,61 @@ public class TotalOfEverything : MonoBehaviour
             {
                 totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().amount;
                 woodBuildings[iWo].GetComponent<WoodProduction>().amount = 0;
-                totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().woodCostAmount;
+                totalWoodAmount -= woodBuildings[iWo].GetComponent<WoodProduction>().woodCostAmount;
                 woodBuildings[iWo].GetComponent<WoodProduction>().woodCostAmount = 0;
-                totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().foodCostAmount;
+                totalFoodAmount -= woodBuildings[iWo].GetComponent<WoodProduction>().foodCostAmount;
                 woodBuildings[iWo].GetComponent<WoodProduction>().foodCostAmount = 0;
-                totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().nonrenewableCostAmount;
+                totalNonRenewableAmount -= woodBuildings[iWo].GetComponent<WoodProduction>().nonrenewableCostAmount;
                 woodBuildings[iWo].GetComponent<WoodProduction>().nonrenewableCostAmount = 0;
-                totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().waterCostAmount;
+                totalWaterProduction -= woodBuildings[iWo].GetComponent<WoodProduction>().waterCostAmount;
                 woodBuildings[iWo].GetComponent<WoodProduction>().waterCostAmount = 0;
-                totalWoodAmount += woodBuildings[iWo].GetComponent<WoodProduction>().energyCostAmount;
+                totalEnergyProduction -= woodBuildings[iWo].GetComponent<WoodProduction>().energyCostAmount;
                 woodBuildings[iWo].GetComponent<WoodProduction>().energyCostAmount = 0;
             }
             for(iWa = 0; iWa < waterBuildings.Count; iWa++)
             {
                 totalWaterProduction += waterBuildings[iWa].GetComponent<WaterProduction>().amount;
                 waterBuildings[iWa].GetComponent<Production>().amount = 0;
+                totalWoodAmount -= waterBuildings[iWa].GetComponent<WaterProduction>().woodCostAmount;
+                waterBuildings[iWa].GetComponent<Production>().woodCostAmount = 0;
+                totalFoodAmount -= waterBuildings[iWa].GetComponent<WaterProduction>().foodCostAmount;
+                waterBuildings[iWa].GetComponent<Production>().foodCostAmount = 0;
+                totalNonRenewableAmount -= waterBuildings[iWa].GetComponent<WaterProduction>().nonrenewableCostAmount;
+                waterBuildings[iWa].GetComponent<Production>().nonrenewableCostAmount = 0;
+                totalWaterProduction -= waterBuildings[iWa].GetComponent<WaterProduction>().waterCostAmount;
+                waterBuildings[iWa].GetComponent<Production>().waterCostAmount = 0;
+                totalEnergyProduction -= waterBuildings[iWa].GetComponent<WaterProduction>().energyCostAmount;
+                waterBuildings[iWa].GetComponent<Production>().energyCostAmount = 0;
             }
             for(iF = 0; iF < foodBuildings.Count; iF++)
             {
                 totalFoodAmount += foodBuildings[iF].GetComponent<FoodProduction>().amount;
                 foodBuildings[iF].GetComponent<Production>().amount = 0;
+                totalWoodAmount -= foodBuildings[iF].GetComponent<FoodProduction>().woodCostAmount;
+                foodBuildings[iF].GetComponent<Production>().woodCostAmount = 0;
+                totalFoodAmount -= foodBuildings[iF].GetComponent<FoodProduction>().foodCostAmount;
+                foodBuildings[iF].GetComponent<Production>().foodCostAmount = 0;
+                totalNonRenewableAmount -= foodBuildings[iF].GetComponent<FoodProduction>().nonrenewableCostAmount;
+                foodBuildings[iF].GetComponent<Production>().nonrenewableCostAmount = 0;
+                totalWaterProduction -= foodBuildings[iF].GetComponent<FoodProduction>().waterCostAmount;
+                foodBuildings[iF].GetComponent<Production>().waterCostAmount = 0;
+                totalEnergyProduction -= foodBuildings[iF].GetComponent<FoodProduction>().energyCostAmount;
+                foodBuildings[iF].GetComponent<Production>().energyCostAmount = 0;
             }
             for(iE = 0; iE < energyBuildings.Count; iE++)
             {
                 totalEnergyProduction += energyBuildings[iE].GetComponent<ElectricityProduction>().amount;
                 energyBuildings[iE].GetComponent<ElectricityProduction>().amount = 0;
+                totalWoodAmount -= energyBuildings[iE].GetComponent<ElectricityProduction>().woodCostAmount;
+                energyBuildings[iE].GetComponent<ElectricityProduction>().woodCostAmount = 0;
+                totalFoodAmount -= energyBuildings[iE].GetComponent<ElectricityProduction>().foodCostAmount;
+                energyBuildings[iE].GetComponent<ElectricityProduction>().foodCostAmount = 0;
+                totalNonRenewableAmount -= energyBuildings[iE].GetComponent<ElectricityProduction>().nonrenewableCostAmount;
+                energyBuildings[iE].GetComponent<ElectricityProduction>().nonrenewableCostAmount = 0;
+                totalWaterProduction -= energyBuildings[iE].GetComponent<ElectricityProduction>().waterCostAmount;
+                energyBuildings[iE].GetComponent<ElectricityProduction>().waterCostAmount = 0;
+                totalEnergyProduction -= energyBuildings[iE].GetComponent<ElectricityProduction>().energyCostAmount;
+                energyBuildings[iE].GetComponent<ElectricityProduction>().energyCostAmount = 0;
             }
             for(iP = 0; iP < housingBuildings.Count; iP++)
             {
@@ -227,25 +254,27 @@ public class TotalOfEverything : MonoBehaviour
                 housingBuildings[iWo].GetComponent<PopulationProduction>().waterCostAmount = 0;
                 totalEnergyProduction -= housingBuildings[iP].GetComponent<PopulationProduction>().energyCostAmount;
                 housingBuildings[iWo].GetComponent<PopulationProduction>().energyCostAmount = 0;
+                totalPopulationCap += housingBuildings[iP].GetComponent<PopulationProduction>().populationCapAmount;
+                housingBuildings[iWo].GetComponent<PopulationProduction>().populationCapAmount = 0;
             }
             for(iNR = 0; iNR < nonRenewableBuildings.Count; iNR++)
             {
                 totalNonRenewableAmount += nonRenewableBuildings[iNR].GetComponent<Expedition>().amount;
                 nonRenewableBuildings[iNR].GetComponent<Expedition>().amount = 0;
+                totalWoodAmount -= nonRenewableBuildings[iNR].GetComponent<Expedition>().woodCostAmount;
+                nonRenewableBuildings[iNR].GetComponent<Expedition>().woodCostAmount = 0;
+                totalFoodAmount -= nonRenewableBuildings[iNR].GetComponent<Expedition>().foodCostAmount;
+                nonRenewableBuildings[iNR].GetComponent<Expedition>().foodCostAmount = 0;
+                totalNonRenewableAmount -= nonRenewableBuildings[iNR].GetComponent<Expedition>().nonrenewableCostAmount;
+                nonRenewableBuildings[iNR].GetComponent<Expedition>().nonrenewableCostAmount = 0;
+                totalWaterProduction -= nonRenewableBuildings[iNR].GetComponent<Expedition>().waterCostAmount;
+                nonRenewableBuildings[iNR].GetComponent<Expedition>().waterCostAmount = 0;
+                totalEnergyProduction -= nonRenewableBuildings[iNR].GetComponent<Expedition>().energyCostAmount;
+                nonRenewableBuildings[iNR].GetComponent<Expedition>().energyCostAmount = 0;
             }
 
             timer = 0;
         }
-    }
-
-    void Happiness()
-    {
-        happiness = (specialBuildings.Count * 20) / housingBuildings.Count / (ecologie * -1 / 100) * 100;
-    }
-
-    void Ecologie()
-    {
-        ecologie = ((greenHousings * 3) + plants / 10) / (housingBuildings.Count + energyBuildings.Count + foodBuildings.Count + waterBuildings.Count + woodBuildings.Count + nonRenewableBuildings.Count * 2) * 100;
     }
 
     void SetStartResources()

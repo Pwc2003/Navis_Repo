@@ -9,6 +9,7 @@ abstract class Production : MonoBehaviour
     [Header("Production rates per second")]
     [SerializeField] protected float productionRate = 0;
     [SerializeField] protected float productGain = 0;
+    [SerializeField] protected float capIncrease = 0;
 
     [HideInInspector] public string tagName;
 
@@ -20,6 +21,7 @@ abstract class Production : MonoBehaviour
     [HideInInspector]public float energyCostAmount;
     [HideInInspector]public float happiness;
     [HideInInspector]public float ecologie;
+    [HideInInspector]public float populationCapAmount;
 
     //resources that it costs to produce 1 item
     [Header("Resources it costs per time it produces")]
