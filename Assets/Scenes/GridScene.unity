@@ -22323,6 +22323,7 @@ MonoBehaviour:
   snapPoints: []
   availableSnapPoints: []
   removedSnapPoints: []
+  GroundMat: {fileID: 2100000, guid: a6b5ef6333fb9044183bc2cededabaa1, type: 2}
 --- !u!114 &1554918051
 MonoBehaviour:
   m_ObjectHideFlags: 0

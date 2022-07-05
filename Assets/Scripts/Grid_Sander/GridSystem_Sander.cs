@@ -24,6 +24,10 @@ public class GridSystem_Sander : MonoBehaviour
     private Vector3 change =  new Vector3(0f, 0f, 20f);
     private Vector3 renderRange;
 
+    // Justin's bullcrap
+
+    public Material GroundMat;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +40,7 @@ public class GridSystem_Sander : MonoBehaviour
             {
                 snapPointInList = Instantiate(snapPoint, snapPosition + j * change, Quaternion.identity);
                 snapPoints.Add(snapPointInList);
-                snapPointInList.transform.GetChild(0).GetComponent<Renderer>().material.color = Color.green;
+                snapPointInList.transform.GetChild(0).GetComponent<Renderer>().material = GroundMat;
                 availableSnapPoints.Add(snapPointInList);
             }
             snapPosition += new Vector3(20f, 0f, 0f);
