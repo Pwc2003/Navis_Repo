@@ -33,14 +33,20 @@ public class SelectionMenuScript : MonoBehaviour
 
     public GameObject Hospital1;
 
-    public GameObject Shop1;
+    public GameObject shop1;
     public GameObject shop2;
 
     [Header("Production Buildings")]
     public GameObject woodProductionBuilding1;
     public GameObject waterProductionBuilding1;
     public GameObject electricityProductionBuilding1;
-    public GameObject productionBuilding4;
+    public GameObject foodProductionBuilding1;
+    public GameObject foodProductionBuilding2;
+
+    [Header("Other Buildings")]
+    public GameObject otherBuilding1;
+    public GameObject otherBuilding2;
+    public GameObject otherBuilding3;
 
 
     void Start()
@@ -201,11 +207,20 @@ public class SelectionMenuScript : MonoBehaviour
     {
         if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
         {
-            spawnedBuilding = Instantiate(Shop1, new Vector3(0, 0, 0), Quaternion.identity);
+            spawnedBuilding = Instantiate(shop1, new Vector3(0, 0, 0), Quaternion.identity);
             check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
             spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
         }
-        
+    }
+
+    public void SpawnShop2()
+    {
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(shop2, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
+        }
     }
 
     public void SpawnWoodProductionBuilding()
@@ -238,7 +253,25 @@ public class SelectionMenuScript : MonoBehaviour
         }
     }
 
-    
+    public void SpawnFoodProductionBuilding()
+    {
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(foodProductionBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
+        }
+    }
+
+    public void SpawnOtherBuilding()
+    {
+        if (totalAmounts.totalNonRenewableAmount > totalAmounts.nonRenewableBuildingCost && totalAmounts.totalWoodAmount > totalAmounts.woodBuildingCost && totalAmounts.totalEnergyProduction > totalAmounts.electricityBuildingCost && totalAmounts.totalWaterProduction > totalAmounts.waterBuildingCost && totalAmounts.totalFoodAmount > totalAmounts.foodBuildingCost)
+        {
+            spawnedBuilding = Instantiate(otherBuilding1, new Vector3(0, 0, 0), Quaternion.identity);
+            check.GetComponent<SnapSystem>().snapObject = spawnedBuilding;
+            spawnedBuilding.GetComponent<PopulationProduction>().RetractCosts();
+        }
+    }
 
     private void FindObject()
     {
