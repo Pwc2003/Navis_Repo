@@ -7575,6 +7575,7 @@ MonoBehaviour:
   otherBuilding1: {fileID: 0}
   otherBuilding2: {fileID: 0}
   otherBuilding3: {fileID: 0}
+  otherBuilding4: {fileID: 0}
 --- !u!1 &528052231
 GameObject:
   m_ObjectHideFlags: 0
@@ -9957,7 +9958,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnHouse
+        m_MethodName: SpawnOtherBuilding4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15150,6 +15151,7 @@ MonoBehaviour:
   otherBuilding1: {fileID: 0}
   otherBuilding2: {fileID: 0}
   otherBuilding3: {fileID: 0}
+  otherBuilding4: {fileID: 0}
 --- !u!1 &1075271006
 GameObject:
   m_ObjectHideFlags: 0
@@ -22370,6 +22372,7 @@ MonoBehaviour:
   otherBuilding1: {fileID: 5495485598999919781, guid: abe476769903bb2408facdf6a9ec6f4a, type: 3}
   otherBuilding2: {fileID: 4758247810345888338, guid: 3e1ca94609f86534db4cb9afea4ef981, type: 3}
   otherBuilding3: {fileID: 6241791745743275693, guid: 1e14e54414f722d44a072604a4f6418a, type: 3}
+  otherBuilding4: {fileID: 332687979221131716, guid: ff514a3c27a73834499a943b5b08e4c4, type: 3}
 --- !u!1 &1559338550
 GameObject:
   m_ObjectHideFlags: 0
@@ -25565,6 +25568,7 @@ MonoBehaviour:
   otherBuilding1: {fileID: 0}
   otherBuilding2: {fileID: 0}
   otherBuilding3: {fileID: 0}
+  otherBuilding4: {fileID: 0}
 --- !u!1 &1800924767
 GameObject:
   m_ObjectHideFlags: 0
