@@ -180,7 +180,7 @@ public class SnapSystem : MonoBehaviour
 
     public void CheckSize()
     {
-        if(snapObject.GetComponentInChildren<Renderer>().bounds.size.x/2 > 10f)
+        if(snapObject.GetComponentInChildren<Renderer>().bounds.size.x/2 > 11f)
         {
             //checking if the object can be placed on the grid with the available snap points on the x-axis
             if(parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Contains(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 51]) && parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Contains(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 51]))
@@ -198,7 +198,7 @@ public class SnapSystem : MonoBehaviour
             overSizeX = false;
             canBuild = true;
         }
-        if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 > 10f)
+        if(snapObject.GetComponentInChildren<Renderer>().bounds.size.z/2 > 11f)
         {
             //checking if the object can be placed on the grid with the available snap points on the z-axis
             if(parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Contains(parent.GetComponent<GridSystem_Sander>().snapPoints[index + 1]) && parent.GetComponent<GridSystem_Sander>().availableSnapPoints.Contains(parent.GetComponent<GridSystem_Sander>().snapPoints[index - 1]))
