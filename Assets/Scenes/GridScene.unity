@@ -3633,7 +3633,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &231094198
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4372,7 +4372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &331968235
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4949,7 +4949,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnHospital
+        m_MethodName: SpawnRoad4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4958,7 +4958,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
 --- !u!114 &372141912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7580,6 +7580,9 @@ MonoBehaviour:
   Road2: {fileID: 0}
   Road3: {fileID: 0}
   Road4: {fileID: 0}
+  Road5: {fileID: 0}
+  Road6: {fileID: 0}
+  Road7: {fileID: 0}
 --- !u!1 &528052231
 GameObject:
   m_ObjectHideFlags: 0
@@ -9058,7 +9061,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnShop2
+        m_MethodName: SpawnRoad5
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9067,7 +9070,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
 --- !u!114 &571955747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11640,7 +11643,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnSchool
+        m_MethodName: SpawnRoad7
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11649,7 +11652,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
 --- !u!114 &835409251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15160,6 +15163,9 @@ MonoBehaviour:
   Road2: {fileID: 0}
   Road3: {fileID: 0}
   Road4: {fileID: 0}
+  Road5: {fileID: 0}
+  Road6: {fileID: 0}
+  Road7: {fileID: 0}
 --- !u!1 &1075271006
 GameObject:
   m_ObjectHideFlags: 0
@@ -18997,7 +19003,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1554918052}
         m_TargetAssemblyTypeName: SelectionMenuScript, Assembly-CSharp
-        m_MethodName: SpawnOtherBuilding
+        m_MethodName: SpawnRoad6
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19006,7 +19012,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 1
 --- !u!114 &1316448882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20349,7 +20355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1416273209
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22387,7 +22393,10 @@ MonoBehaviour:
   Road1: {fileID: 8502862262025099648, guid: 36c424c1cacc942459e89ce8f7685933, type: 3}
   Road2: {fileID: 8556477157624355478, guid: de621e26a8f553e4a91b83d63afb795a, type: 3}
   Road3: {fileID: 7570175035817246312, guid: 0c10c7f9655af6b4b9963cf756fec4f6, type: 3}
-  Road4: {fileID: 4775208242513771808, guid: 1acdab541dfb0c241898907544d16155, type: 3}
+  Road4: {fileID: 6319928481707311868, guid: 1acdab541dfb0c241898907544d16155, type: 3}
+  Road5: {fileID: 1654663722762974917, guid: 00e41065cc39ecb4fb76503bc8915016, type: 3}
+  Road6: {fileID: 1562055796392563191, guid: e556b3d39f7648e46a7c24b5cd01e436, type: 3}
+  Road7: {fileID: 9127706539378679991, guid: 278bc4aa57e5ff84bb4f575dfd4a48e8, type: 3}
 --- !u!1 &1559338550
 GameObject:
   m_ObjectHideFlags: 0
@@ -25592,6 +25601,9 @@ MonoBehaviour:
   Road2: {fileID: 0}
   Road3: {fileID: 0}
   Road4: {fileID: 0}
+  Road5: {fileID: 0}
+  Road6: {fileID: 0}
+  Road7: {fileID: 0}
 --- !u!1 &1800924767
 GameObject:
   m_ObjectHideFlags: 0
@@ -29314,7 +29326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2061535794
 RectTransform:
   m_ObjectHideFlags: 0
