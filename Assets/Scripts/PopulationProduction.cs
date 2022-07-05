@@ -31,10 +31,12 @@ class PopulationProduction : Production
         if (totalAmounts.totalPopulationAmount < totalAmounts.totalPopulationCap)
         {
             canProduce = true;
+            
         }
         else
         {
             canProduce = false;
+            totalAmounts.totalPopulationAmount = totalAmounts.totalPopulationCap;
         }
     }
 }
