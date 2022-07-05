@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUDMain : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class HUDMain : MonoBehaviour
     Vector3 HUDL_EXPLocationD;
     Vector3 HUDR_ROTLocationD;
     Vector3 HUDM_LAYLocationD;
+
+    public GameObject GameOverScr;
 
 
 
@@ -131,6 +134,16 @@ public class HUDMain : MonoBehaviour
         } else {
             LayoutStnsMnBtn.gameObject.transform.localScale = new Vector3(0, 0, 0);
             HUDM_LAY.gameObject.transform.localScale = new Vector3(0, 0, 0);
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("GridScene");
+        }
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            GameOverScr.SetActive(true);
         }
     }
 
