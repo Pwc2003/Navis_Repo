@@ -57,6 +57,7 @@ public class HUDMain : MonoBehaviour
     Vector3 HUDM_LAYLocationD;
 
     public GameObject GameOverScr;
+    public Button ReturnToMainGmvr;
 
 
 
@@ -98,6 +99,7 @@ public class HUDMain : MonoBehaviour
         LayoutStnsMnBtn.onClick.AddListener(LayoutStnsMnBtn_Click);
         SaveLayoutBtn.onClick.AddListener(SaveLayoutBtn_Click);
         FactoryLayoutBtn.onClick.AddListener(FactoryLayoutBtn_Click);
+        ReturnToMainGmvr.onClick.AddListener(ReturnToMainGmvr_Click);
 
 
         // Do some other magic or sum lmfao
@@ -160,6 +162,10 @@ public class HUDMain : MonoBehaviour
             ObjectivesTabrt.sizeDelta = new Vector2(487.8538f, 485f);
             Objective1.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
         }
+    }
+
+    void ReturnToMainGmvr_Click() {
+        SceneManager.LoadScene("MainMenu");
     }
 
     void ButtonHUD1_Click()
