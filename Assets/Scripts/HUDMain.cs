@@ -31,6 +31,7 @@ public class HUDMain : MonoBehaviour
 
     // Tabs
     private GameObject Tab1;
+    private GameObject Tab1B;
     private GameObject Tab2;
 
     public Text Cityname;
@@ -57,6 +58,7 @@ public class HUDMain : MonoBehaviour
         // Find Stuff
         HUDL_U = GameObject.Find("UitklapdingL");
         Tab1 = GameObject.Find("TabHUDL1");
+        Tab1B = GameObject.Find("TabHUDL1_P2");
         Tab2 = GameObject.Find("TabHUDL2");
         HUDR_U = GameObject.Find("UitklapdingR");
         HUDL_EXP = GameObject.Find("UitklapdingExpeditions");
@@ -90,6 +92,7 @@ public class HUDMain : MonoBehaviour
 
         // Do some other magic or sum lmfao
         Tab1.SetActive(false);
+        Tab1B.SetActive(false);
         Tab2.SetActive(false);
 
         Cityname.text = "Navis City";
@@ -142,6 +145,7 @@ public class HUDMain : MonoBehaviour
         HUDL_U.SetActive(!HUDL_U.activeSelf);
 
         Tab1.SetActive(true);
+        Tab1B.SetActive(false);
         Tab2.SetActive(false);
     }
 
@@ -151,6 +155,7 @@ public class HUDMain : MonoBehaviour
 
         Tab1.SetActive(false);
         Tab2.SetActive(true);
+        Tab1B.SetActive(false);
     }
 
     void CounterButton_Click()
