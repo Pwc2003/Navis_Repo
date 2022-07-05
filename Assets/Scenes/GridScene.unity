@@ -1995,7 +1995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &209494781
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2840,7 +2840,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &398352801
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5224,7 +5224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Villa
+  m_Text: Supermarket
 --- !u!222 &642014693
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7891,8 +7891,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000016212, y: 51.612926}
-  m_SizeDelta: {x: 124.1944, y: 108.0936}
+  m_AnchoredPosition: {x: 0.000017166, y: 51.3}
+  m_SizeDelta: {x: 88.9447, y: 77.4138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1119836620
 MonoBehaviour:
@@ -7914,7 +7914,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9fc530d150d20654792279b7893477d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 11ea281deb064b140a50786d63af9a36, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11563,8 +11563,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 60.443413}
-  m_SizeDelta: {x: 100, y: 57.5078}
+  m_AnchoredPosition: {x: 0, y: 62.61297}
+  m_SizeDelta: {x: 100, y: 53.1687}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552801682
 MonoBehaviour:
@@ -11586,7 +11586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c33c195cc676a904199fe8f0c5781d69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c057453c2d20924c8626af4be25b2a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12798,7 +12798,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Costs: Milk
 
-    Gives: Population'
+    Gives: Some milk too'
 --- !u!222 &1669816326
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13320,7 +13320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Farm
+  m_Text: Market
 --- !u!222 &1748877888
 CanvasRenderer:
   m_ObjectHideFlags: 0
