@@ -279,11 +279,11 @@ public class TotalOfEverything : MonoBehaviour
 
     void SetStartResources()
     {
-        totalWoodAmount += 500;
+        totalWoodAmount += 50000;
         totalFoodAmount += 500;
         totalNonRenewableAmount += 50;
-        totalWaterProduction += 100;
-        totalEnergyProduction += 100;
+        totalWaterProduction += 10000;
+        totalEnergyProduction += 10000;
         totalPopulationAmount += 592;
         totalPopulationCap += 750;
     }
