@@ -90,6 +90,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340162463987105098}
+  - component: {fileID: 3285497151190716545}
   m_Layer: 0
   m_Name: windmolen_01
   m_TagString: Untagged
@@ -113,6 +114,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 93.282, z: 0}
+--- !u!114 &3285497151190716545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149455130814261232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ccb632df9eff64694b7623e203d07a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionRate: 0
+  productGain: 0
+  capIncrease: 0
+  tagName: 
+  amount: 0
+  foodCostAmount: 0
+  woodCostAmount: 0
+  nonrenewableCostAmount: 0
+  waterCostAmount: 0
+  energyCostAmount: 0
+  happiness: 0
+  ecologie: 0
+  populationCapAmount: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 0
+  waterUsageCost: 0
+  foodUsageCost: 0
+  populationUsageCost: 0
+  woodBuildingCost: 0
+  foodBuildingCost: 0
+  nonRenewableBuildingCost: 0
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
+  canvas: {fileID: 0}
+  produced: 0
 --- !u!1 &3570207788559307937
 GameObject:
   m_ObjectHideFlags: 0

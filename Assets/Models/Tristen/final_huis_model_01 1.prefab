@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3141533116559461401}
   - component: {fileID: 899595058451839187}
   - component: {fileID: -8083891583853425296}
+  - component: {fileID: -5768747676480700233}
   m_Layer: 0
   m_Name: final_huis_model_01 1
   m_TagString: Untagged
@@ -95,3 +96,44 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selected: 0
+--- !u!114 &-5768747676480700233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692505187913586950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d2b883f5952f5940a83af2348636500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  productionRate: 1
+  productGain: 0
+  capIncrease: 10
+  tagName: 
+  amount: 0
+  foodCostAmount: 0
+  woodCostAmount: 0
+  nonrenewableCostAmount: 0
+  waterCostAmount: 0
+  energyCostAmount: 0
+  happiness: 0
+  ecologie: 0
+  populationCapAmount: 0
+  woodProductionCost: 0
+  foodProductionCost: 0
+  nonRenewableProductionCost: 0
+  populationProductionCost: 0
+  electricityUsageCost: 2
+  waterUsageCost: 1
+  foodUsageCost: 0
+  populationUsageCost: 0
+  woodBuildingCost: 10
+  foodBuildingCost: 3
+  nonRenewableBuildingCost: 5
+  populationBuildingCost: 0
+  waterBuildingCost: 0
+  electricityBuildingCost: 0
+  canvas: {fileID: 0}
+  produced: 0

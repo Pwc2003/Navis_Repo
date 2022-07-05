@@ -19,8 +19,6 @@ class FoodProduction : Production
             if(canProduce)
             {
                 amount += productionRate;
-                totalAmounts.totalWaterProduction -= waterUsageCost;
-                totalAmounts.totalEnergyProduction -= electricityUsageCost;
             }
             timer = 0;
         }
